@@ -1,0 +1,2497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>Robin Hossain | Portfolio</title>
+    <meta content="Currently working in the IT Department at Mousumi Industries Limited, I focus on maintaining reliable network connectivity, monitoring data center operations, and managing IT infrastructure. I believe that staying aligned with evolving technologies and taking on challenging tasks is essential for continuous skill development and meaningful contribution to the organization’s success." name="description">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href="assets/img/favicon/logo_desktop.png" rel="icon">
+    <link href="assets/img/favicon/logo_desktop.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particleBackground" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;"></canvas>
+    <div id="particles-js" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;display:none;"></div>
+
+    <!-- Framer PaperBackground Component (Light/Normal Mode) -->
+    <!-- Source: https://framer.com/m/PaperBackground-Sgl7.js@fqUdm1CCYhm8M0c3yhGK -->
+    <div class="framer-paper-background" id="framerPaperBackground" aria-hidden="true">
+        <div class="paper-texture-wash"></div>
+        <div class="paper-fibers"></div>
+        <div class="paper-noise"></div>
+        <svg class="paper-lines-svg" width="100%" height="100%">
+            <defs>
+                <pattern id="framer-paper-pattern-lined" x="0" y="0" width="100%" height="24" patternUnits="userSpaceOnUse">
+                    <line x1="0" y1="24" x2="100%" y2="24" stroke="#d0d0d0" stroke-width="1" opacity="0.3"></line>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#framer-paper-pattern-lined)"></rect>
+        </svg>
+    </div>
+
+    <!-- Framer CursorDotTrail (Desktop Only - Dark Mode) Cloned from https://framer.com/m/CursorDotTrail-ZDqFAE.js@iLyzK205nNCuHNDP5Nsc -->
+    <canvas id="cursor-dot-trail-canvas" aria-hidden="true"></canvas>
+    <!-- Framer Mouse Trail Canvas (Light Mode Only) -->
+    <canvas id="mouse-trail-canvas"></canvas>
+
+    <!-- Framer Pill ScrollBar (https://framer.com/m/Pill-ScrollBar-5wR5Aj.js@1V70UhCDhcNjEJTugyso) -->
+    <div id="pillScrollBar" class="pill-scrollbar-track" role="scrollbar" aria-label="Scroll Progress" aria-orientation="vertical" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="pill-scrollbar-progress" id="pillScrollProgress"></div>
+    </div>
+
+    <!-- Scroll to Top Button: Framer IconWebglShader (https://framer.com/m/IconWebglShader-b8f8wh.js) -->
+    <button id="scrollToTopBtn" class="scroll-to-top-btn icon-webgl-shader-btn" title="Scroll to top" aria-label="Scroll to top">
+        <svg class="shader-mask-svg" width="0" height="0" style="position: absolute; pointer-events: none;" aria-hidden="true">
+            <defs>
+                <mask id="scrollShaderMask" maskContentUnits="objectBoundingBox">
+                    <rect width="1" height="1" fill="black" />
+                    <circle cx="0.5" cy="0.5" r="0.47" fill="none" stroke="white" stroke-width="0.055" />
+                </mask>
+            </defs>
+        </svg>
+        <div class="shader-ring" id="scrollToTopShader"></div>
+        <div class="shader-inner-disc"></div>
+        <div class="shader-icon">
+            <svg viewBox="0 0 1024 1024" width="100%" height="100%" fill="currentColor">
+                <path d="M843.968 896a51.072 51.072 0 0 1-51.968-52.032V232H180.032A51.072 51.072 0 0 1 128 180.032c0-29.44 22.528-52.032 52.032-52.032h663.936c29.44 0 52.032 22.528 52.032 52.032v663.936c0 29.44-22.528 52.032-52.032 52.032z"/>
+                <path d="M180.032 896a49.92 49.92 0 0 1-36.48-15.616c-20.736-20.8-20.736-53.76 0-72.832L807.616 143.616c20.864-20.8 53.76-20.8 72.832 0 20.8 20.8 20.8 53.76 0 72.768L216.384 880.384a47.232 47.232 0 0 1-36.352 15.616z"/>
+            </svg>
+        </div>
+    </button>
+    
+    <!-- Preloader: Greeting Loader (greatingloader.framer.website) -->
+    <div id="preloader" aria-hidden="false">
+        <div class="greeting-loader-ambient"></div>
+        <div class="greeting-loader-container">
+            <div class="greeting-loader-reel" id="greetingReel"></div>
+        </div>
+    </div>
+
+    <!-- Floating Pill Navigation -->
+    <header id="navbar" class="floating-pill-header">
+        <div class="nav-container floating-pill-dock">
+            <!-- Brand / Logo -->
+            <a href="#home" class="nav-logo" aria-label="Robin Hossain Home">
+                <span>R</span><span class="wave-o">o</span><span>b</span><span>i</span><span>n</span><span>&nbsp;</span><span>H</span><span class="wave-o">o</span><span>s</span><span>s</span><span>a</span><span>i</span><span>n</span>
+            </a>
+
+            <!-- Framer Floating Pill Navigation -->
+            <nav class="nav-links floating-pill-nav" aria-label="Primary Navigation">
+                <div class="floating-pill-active-bg" aria-hidden="true"></div>
+                <div class="floating-pill-hover-bg" aria-hidden="true"></div>
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <!-- Actions: KokonutUI Pull Cord & Mobile Hamburger -->
+            <div class="nav-actions">
+                <div id="theme-toggle" class="kokonut-pull-cord theme-toggle-btn" role="switch" tabindex="0" aria-label="Switch to light mode" aria-checked="false" title="Pull the cord to toggle theme">
+                    <svg class="pull-cord-svg" viewBox="54 0 180 290" width="46" height="74" aria-hidden="true">
+                        <defs>
+                            <!-- Light cone glow gradient when lamp is ON -->
+                            <radialGradient id="lampGlowGradient" cx="50%" cy="0%" r="90%">
+                                <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.5" />
+                                <stop offset="45%" stop-color="#f59e0b" stop-opacity="0.18" />
+                                <stop offset="100%" stop-color="#d97706" stop-opacity="0" />
+                            </radialGradient>
+                            <!-- Bulb luminous bloom filter -->
+                            <filter id="lampBulbGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur1" />
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur2" />
+                                <feMerge>
+                                    <feMergeNode in="blur2" />
+                                    <feMergeNode in="blur1" />
+                                    <feMergeNode in="SourceGraphic" />
+                                </feMerge>
+                            </filter>
+                        </defs>
+
+                        <!-- Downward illuminated light cone (active in light mode) -->
+                        <polygon class="lamp-light-cone" points="144,120 60,285 228,285" fill="url(#lampGlowGradient)" />
+
+                        <!-- Ceiling suspension wire -->
+                        <line class="lamp-wire" x1="144" y1="0" x2="144" y2="62" stroke-width="2.5" />
+
+                        <!-- Lamp Shade / Fixture Canopy -->
+                        <path class="lamp-shade" d="M130 62 h28 l38 50 q2 4 -3 4 h-98 q-5 0 -3 -4 Z" />
+
+                        <!-- Shade bottom rim detail -->
+                        <line class="lamp-shade-rim" x1="94" y1="116" x2="194" y2="116" stroke-width="1.5" />
+
+                        <!-- Light bulb (glows warm amber when ON) -->
+                        <path class="lamp-bulb" d="M129 116 a15 13 0 0 0 30 0 Z" />
+
+                        <!-- Dynamic pull cord path -->
+                        <path class="pull-cord-line" fill="none" stroke-linecap="round" stroke-width="2" />
+
+                        <!-- Wide invisible stroke for easy touch/mouse grabbing -->
+                        <path class="pull-cord-hit" fill="none" stroke="transparent" stroke-width="28" />
+
+                        <!-- Bead handle at the bottom of the cord -->
+                        <g class="pull-cord-bead" transform="translate(180, 218)">
+                            <!-- Touch / click hit area -->
+                            <circle class="bead-hit-target" fill="transparent" r="26" cx="0" cy="11" />
+                            <!-- Accessible focus outline -->
+                            <rect class="bead-focus-ring" x="-8" y="-2" width="16" height="26" rx="8" fill="none" stroke="#60a5fa" stroke-width="2" />
+                            <!-- Cylindrical bead body -->
+                            <rect class="bead-body" x="-5" y="1" width="10" height="20" rx="5" />
+                            <!-- Metallic collar detail -->
+                            <line class="bead-collar" x1="-4" y1="4" x2="4" y2="4" stroke-width="1.5" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="nav-hamburger" aria-label="Toggle mobile menu" role="button" tabindex="0">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <!-- Fluid Distortion Shader Background (bold-answers-412382.framer.app) -->
+        <div class="hero-shader-bg" id="heroShaderBg" aria-hidden="true">
+            <canvas id="heroShaderCanvas" class="hero-shader-canvas"></canvas>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-intro ml-optical-button" role="banner" data-hover="false">
+                <span class="ml-optical-face">
+                    <span class="ml-optical-body" aria-hidden="true">
+                        <span class="ml-optical-surface">
+                            <span class="ml-optical-tint"></span>
+                            <span class="ml-optical-shoulder"></span>
+                            <span class="ml-optical-reflection"></span>
+                            <span class="ml-optical-caustic"></span>
+                            <span class="ml-optical-pointer-light"></span>
+                        </span>
+                        <span class="ml-optical-rim"></span>
+                        <span class="ml-optical-rim ml-optical-edge-light"></span>
+                        <span class="ml-optical-bottom"></span>
+                    </span>
+                    <span class="ml-optical-label">Hello, It's Me</span>
+                </span>
+            </div>
+            <!-- Framer ParticleText: Robin Hossain (Cloned from https://framer.com/m/ParticleText-2NZQ.js@otOSwmqP2acS2BjTve4l) -->
+            <div class="hero-particle-text-container" role="heading" aria-level="1" aria-label="Robin Hossain">
+                <canvas id="hero-particle-text-canvas" class="hero-particle-text-canvas" aria-label="Interactive Robin Hossain Particle Text"></canvas>
+                <h1 class="sr-only">Robin Hossain</h1>
+            </div>
+            <div class="hero-subtitle kinetic-swapper-container" aria-label="I'm Junior Officer, IT Support Specialist, Cybersecurity Enthusiast">
+                <span class="kinetic-prefix">I'm</span>
+                <span class="kinetic-word-wrapper kokonut-dynamic-text" id="kineticWordWrapper" aria-live="polite"><span class="dynamic-text-measure" aria-hidden="true"></span><span class="dynamic-text-live" aria-hidden="true"></span><span class="dynamic-text-initial">Junior Officer</span></span>
+            </div>
+            <p class="hero-description">
+               Currently working in the IT Department at Mousumi Industries Limited, responsible for maintaining reliable network connectivity, monitoring data center operations, and managing IT infrastructure. I believe staying updated with evolving technologies and tackling challenging tasks is essential for continuous skill development and meaningful contributions to the company’s success.
+            </p>
+            <div class="hero-buttons">
+                <a href="#about" class="hpx-afb hero-btn-know-more" onclick="scrollToSection('about'); return false;">
+                    <span class="hpx-afb__label">Know More</span>
+                    <div aria-hidden="true" class="hpx-afb__circle"></div>
+                    <div aria-hidden="true" class="hpx-afb__mask">
+                        <span class="hpx-afb__mask-label">Know More</span>
+                    </div>
+                    <span aria-hidden="true" class="hpx-afb__icon">
+                        <svg class="hpx-afb__icon-svg hpx-afb__icon-svg--enter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                        <svg class="hpx-afb__icon-svg hpx-afb__icon-svg--exit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </span>
+                </a>
+                <a href="#contact" class="hpx-bouncy-btn hero-btn-hire-me" onclick="scrollToSection('contact'); return false;">
+                    <div class="hpx-bouncy-btn__text-wrap">
+                        <div class="hpx-bouncy-btn__text-track">
+                            <span class="hpx-bouncy-btn__label">Hire Me</span>
+                            <span class="hpx-bouncy-btn__label">Hire Me</span>
+                        </div>
+                    </div>
+                    <div class="hpx-bouncy-btn__circle">
+                        <div class="hpx-bouncy-btn__circle-fill"></div>
+                        <svg class="hpx-bouncy-btn__arrow hpx-bouncy-btn__arrow--default" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M 17.25 15.25 L 17.25 6.75 L 8.75 6.75" />
+                            <path d="M 17 7 L 6.75 17.25" />
+                        </svg>
+                        <svg class="hpx-bouncy-btn__arrow hpx-bouncy-btn__arrow--hover" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M 17.25 15.25 L 17.25 6.75 L 8.75 6.75" />
+                            <path d="M 17 7 L 6.75 17.25" />
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            <div class="scroll-indicator">
+                <svg class="mouse-anim" width="20" height="32" viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="22" height="34" rx="11" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" fill="none"/>
+                    <circle class="mouse-wheel" cx="12" cy="10" r="2" fill="#fff"/>
+                </svg>
+                <span class="scroll-indicator-text">SCROLL TO EXPLORE</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Professional Summary</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I was born and raised in Dhaka, and now I'm a Junior Officer at Mousumi Industries Limited. In this role, I oversee reliable network connectivity, monitor data center operations, and manage IT infrastructure across the organization. Working in an industrial environment has strengthened my practical understanding of large-scale IT systems and inspired me to stay ahead of emerging technologies while constantly expanding my expertise.
+                    </p>
+                    <p>I've done my B.Sc. in Information Technology at the University of Information Technology & Sciences (UITS), where I developed a strong foundation in Computer Networking and System Administration. Alongside my degree, I have completed industry-recognized certifications that enhanced my understanding of network protocols, connectivity troubleshooting, wireless configurations, cybersecurity, and computer hardware.
+                    </p>
+                    <p>Every day, I make an effort to educate myself more about current events and the technological world. I love to solve problems and learn new things, and nothing gets me more excited than thinking of innovative ideas and making them really happen so that people can't bear to be without them.
+                    </p>
+                    
+                    <!-- Accordion Section — Framer Motion Cards Style (https://motioncards.framer.website) -->
+                    <div class="accordion-section">
+                        <div class="accordion-item" data-accordion="item1">
+                            <div class="accordion-header" tabindex="0" role="button" aria-expanded="false">
+                                <h3>What I'm really good at?</h3>
+                                <div class="accordion-chevron" aria-hidden="true">
+                                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="accordion-content-inner">
+                                    <p>I have a strength for learning and applying knowledge, especially in IT fields like networking and cybersecurity. I'm naturally curious and always try to make complex ideas clear and easy to understand. I enjoy analyzing situations, comparing options, and finding the best solutions, which helps me stay focused on both my current work and long-term goals. At the same time, I reflect a lot on myself, which gives me the awareness to balance technical skills with emotional understanding. Altogether, I believe these qualities make me strong in problem-solving, communication, and planning for the future.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item" data-accordion="item2">
+                            <div class="accordion-header" tabindex="0" role="button" aria-expanded="false">
+                                <h3>What is my career goal?</h3>
+                                <div class="accordion-chevron" aria-hidden="true">
+                                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="accordion-content-inner">
+                                    <p>My career goal is to build a strong foundation in the field of networking and gradually move into more advanced roles within the sector. Over time, I want to develop the expertise and leadership skills needed to take on greater responsibility in managing IT infrastructure, ideally in an industry or multinational company, where I can ensure secure and reliable IT operations. I see this path as a way to combine my technical knowledge, problem-solving ability, and vision for creating safer digital environments.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item" data-accordion="item3">
+                            <div class="accordion-header" tabindex="0" role="button" aria-expanded="false">
+                                <h3>What are my hobbies?</h3>
+                                <div class="accordion-chevron" aria-hidden="true">
+                                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="accordion-content-inner">
+                                    <p>I love working on new projects that involve the latest technologies, and I find writing code both fun and creative. Outside of coding, collecting various gadgets and perfumes is another hobby that excites me. I love watching movies, which gives me entertainment after a busy day. Also, I enjoy reading books about technology, personal development, and spirituality, which keeps me up-to-date, helps me grow intellectually, and allows me to find balance in my life. And of course, traveling is one of my favorite things; it opens me up to new experiences, fresh perspectives, and the chance to explore different cultures.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item" data-accordion="item4">
+                            <div class="accordion-header" tabindex="0" role="button" aria-expanded="false">
+                                <h3>What is my research topic?</h3>
+                                <div class="accordion-chevron" aria-hidden="true">
+                                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="accordion-content-inner">
+                                    <p>My academic research titled on <strong>“Drinking Water Quality Prediction Based on Machine Learning Algorithms,”</strong> addressing the critical public health challenge of water contamination in developing countries such as Bangladesh. Alongside this, I am actively involved in research on <strong> “Reducing Unwanted Vehicle Horns Using V2V Wireless Communication for Safer Commuting,” </strong> where I explore technology-driven approaches to improve urban mobility and safety. Through these initiatives, I seek to deepen my understanding, produce meaningful contributions to the field, and translate theoretical knowledge into practical. It's a topic that challenges me, excites me, and constantly pushes me to learn more.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <!-- Profile Image Container Start: Framer Profile style (https://framer.com/m/Profile-oXUg.js@ZcEJYeJpyLw2AHSkIIFz) -->
+                    <svg class="profile-goo-svg" aria-hidden="true" style="position: absolute; width: 0; height: 0; pointer-events: none;">
+                        <defs>
+                            <filter id="profile-goo">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -8" result="goo" />
+                                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+                            </filter>
+                        </defs>
+                    </svg>
+                    <div class="profile-image-container">
+                        <div class="profile-framer-wrapper" id="profileFramerWrapper">
+                            <div class="profile-framer-gooey">
+                                <div class="profile-framer-pill">
+                                    <span class="profile-framer-pill-text">Robin Hossain</span>
+                                </div>
+                                <div class="profile-framer-avatar">
+                                    <img src="assets/img/profile images/robin_hossain_formal_image.jpg" alt="Robin Hossain" class="profile-image" id="profileImage" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Profile Image Container End -->
+                    <h3 class="personal-info-title">Personal Information</h3>
+                    <div class="contact-info">
+                        <p><strong>Name</strong><span style="white-space:nowrap;">Robin Hossain</span></p>
+                        <p><strong>E-mail</strong><span style="white-space:nowrap;"><a href="mailto:robin.hossain@cutebd.biz" style="color: inherit; text-decoration: none;">robin.hossain@cutebd.biz</a></span></p>
+                        <p><strong>Phone</strong><span style="white-space:nowrap;"><a href="phone:++(880)1770-792411" style="color: inherit; text-decoration: none;">+(880)1770-792411</a></span></p>
+                        <p><strong>Blood Group</strong><span style="white-space:nowrap;">O+(ve)</span></p>
+                        <p><strong>Nationality</strong><span style="white-space:nowrap;">Bangladeshi</span></p>
+                        <p><strong>Values</strong><span style="white-space:nowrap;">Integrity | Continuous Learning | Teamwork</span></p>
+                        <p><strong>Motto</strong><span style="white-space:nowrap;"><em>"Driven by logic, defined by learning."</em></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section (Framer Service Card UI Style) -->
+    <!-- Reference: https://framer.com/m/Service-Card-UI-L8FDiL.js@UnQor77ZlU6p1w3teRDy -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <!-- Card 1: Projects Completed -->
+                <div class="stat-card" style="--sc-inside-bg: rgb(254, 239, 229); --sc-inside-border: rgb(250, 228, 214);">
+                    <img src="assets/img/pin.png" class="sc-pin" alt="Pin" aria-hidden="true">
+                    <div class="sc-header-row">
+                        <span class="sc-no">01</span>
+                        <i class="fas fa-tasks sc-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="sc-content">
+                        <h3 class="sc-number">3</h3>
+                        <h4 class="sc-title">Projects Completed</h4>
+                        <p class="sc-desc">Built and deployed full-stack web applications, networking tools, and interactive platforms.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Year Of Experience -->
+                <div class="stat-card" id="experience-stat" style="--sc-inside-bg: rgb(238, 245, 254); --sc-inside-border: rgb(220, 235, 250);">
+                    <img src="assets/img/pin.png" class="sc-pin" alt="Pin" aria-hidden="true">
+                    <div class="sc-header-row">
+                        <span class="sc-no">02</span>
+                        <i class="fas fa-user-tie sc-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="sc-content">
+                        <h3 class="sc-number" id="experience-value">1+</h3>
+                        <h4 class="sc-title" id="experience-label">Year Of Experience</h4>
+                        <p class="sc-desc">IT Operations, enterprise network infrastructure, data center monitoring, and technical systems.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Lines Of Code -->
+                <div class="stat-card" style="--sc-inside-bg: rgb(238, 248, 240); --sc-inside-border: rgb(220, 240, 225);">
+                    <img src="assets/img/pin.png" class="sc-pin" alt="Pin" aria-hidden="true">
+                    <div class="sc-header-row">
+                        <span class="sc-no">03</span>
+                        <i class="fas fa-code sc-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="sc-content">
+                        <h3 class="sc-number">21995</h3>
+                        <h4 class="sc-title">Lines Of Code</h4>
+                        <p class="sc-desc">Production code written across full-stack applications, algorithms, automation scripts, and interfaces.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Awards -->
+                <div class="stat-card" style="--sc-inside-bg: rgb(254, 247, 230); --sc-inside-border: rgb(248, 235, 205);">
+                    <img src="assets/img/pin.png" class="sc-pin" alt="Pin" aria-hidden="true">
+                    <div class="sc-header-row">
+                        <span class="sc-no">04</span>
+                        <i class="fas fa-trophy sc-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="sc-content">
+                        <h3 class="sc-number">3</h3>
+                        <h4 class="sc-title">Awards</h4>
+                        <p class="sc-desc">Recognized for academic excellence, project leadership, and technical innovation achievements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <p class="experience-description mobile-experience-para">
+                Exposure to large-scale industrial operations has strengthened my ability to apply IT solutions in dynamic environments and reinforced my commitment to continuous growth and innovation.
+            </p>
+
+            <!-- ModernMilestones Timeline (https://modernmilestones.framer.website/) -->
+            <div class="mm-timeline-container" id="experienceMilestones">
+                <!-- Center vertical timeline track line -->
+                <div class="mm-track-line">
+                    <div class="mm-progress-line" id="mmProgressLine"></div>
+                </div>
+
+                <!-- Milestone List -->
+                <div class="mm-milestone-list">
+                    <!-- Milestone 1: Mousumi Industries Limited (Left on desktop) -->
+                    <div class="mm-milestone-item mm-side-left" data-index="0">
+                        <div class="mm-node-dot" data-index="0"></div>
+                        <div class="mm-card">
+                            <div class="mm-callout-arrow"></div>
+                            <div class="mm-card-body">
+                                <div class="mm-header-row">
+                                    <div class="mm-logo-box">
+                                        <img src="assets/img/work experience/company_logo_MIL.png" alt="Mousumi Industries Limited" class="mm-logo-img">
+                                    </div>
+                                    <div class="mm-role-info">
+                                        <h3 class="mm-title">Junior Officer</h3>
+                                        <div class="mm-dept">Department of IT</div>
+                                        <div class="mm-company">
+                                            <a href="https://www.linkedin.com/company/mousumi-industries-limited/posts/?feedView=all" target="_blank" rel="noopener noreferrer">Mousumi Industries Limited</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mm-location-row">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>9, Bangshal Road, Dhaka - 1100</span>
+                                </div>
+                                <div class="mm-responsibilities">
+                                    <div class="mm-resp-title">Key Responsibilities:</div>
+                                    <ul class="mm-resp-list">
+                                        <li>Conduct routine LAN/WAN system inspections and testing to identify vulnerabilities.</li>
+                                        <li>Maintain network security protocols to safeguard data and prevent unauthorized access.</li>
+                                        <li>Ensure that network equipment is configured, including switches, routers, and firewalls.</li>
+                                        <li>Collaborate with IT support teams to resolve technical issues and network-related incidents.</li>
+                                        <li>Resolve any technical issues encountered by office employees.</li>
+                                        <li>Manage the day-to-day operations of the data center, including performance monitoring and backup processes.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mm-date-block">
+                                <span class="mm-date-month">JUN</span>
+                                <span class="mm-date-day">01</span>
+                                <span class="mm-date-year">2025</span>
+                                <span class="mm-date-status">PRESENT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2: ByteSlash (Right on desktop) -->
+                    <div class="mm-milestone-item mm-side-right" data-index="1">
+                        <div class="mm-node-dot" data-index="1"></div>
+                        <div class="mm-card">
+                            <div class="mm-callout-arrow"></div>
+                            <div class="mm-card-body">
+                                <div class="mm-header-row">
+                                    <div class="mm-logo-box">
+                                        <img src="assets/img/work experience/byetslash_logo.png" alt="ByteSlash" class="mm-logo-img">
+                                    </div>
+                                    <div class="mm-role-info">
+                                        <h3 class="mm-title">Founder</h3>
+                                        <div class="mm-company">
+                                            <a href="https://www.facebook.com/byteslash" target="_blank" rel="noopener noreferrer">ByteSlash</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mm-location-row">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Dhaka, Bangladesh</span>
+                                </div>
+                                <div class="mm-responsibilities">
+                                    <div class="mm-resp-title">Key Responsibilities:</div>
+                                    <ul class="mm-resp-list">
+                                        <li>Research and validate trending and emerging technology news through credible digital sources and cross-platform verification.</li>
+                                        <li>Design visually engaging graphical content and craft concise, insight-driven summaries for featured tech news coverage.</li>
+                                        <li>Managed and published posts/reels to deliver the latest technology and cybersecurity updates to audiences interested in staying informed about the evolving digital world.</li>
+                                        <li>Monitor audience engagement analytics and develop data-driven content strategies to maximize reach, visibility, and user interaction.</li>
+                                        <li>Evaluate project performance and measure return on investment (ROI) through analytical reporting and performance assessment.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mm-date-block">
+                                <span class="mm-date-month">APR</span>
+                                <span class="mm-date-day">01</span>
+                                <span class="mm-date-year">2025</span>
+                                <span class="mm-date-status">PRESENT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3: Time Space (Left on desktop) -->
+                    <div class="mm-milestone-item mm-side-left" data-index="2">
+                        <div class="mm-node-dot" data-index="2"></div>
+                        <div class="mm-card">
+                            <div class="mm-callout-arrow"></div>
+                            <div class="mm-card-body">
+                                <div class="mm-header-row">
+                                    <div class="mm-logo-box">
+                                        <img src="assets/img/work experience/time_space_logo.jpg" alt="Time Space" class="mm-logo-img">
+                                    </div>
+                                    <div class="mm-role-info">
+                                        <h3 class="mm-title">Co-founder</h3>
+                                        <div class="mm-company">
+                                            <a href="https://www.facebook.com/timespace.com.bd" target="_blank" rel="noopener noreferrer">Time Space</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mm-location-row">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Dhaka, Bangladesh</span>
+                                </div>
+                                <div class="mm-responsibilities">
+                                    <div class="mm-resp-title">Key Responsibilities:</div>
+                                    <ul class="mm-resp-list">
+                                        <li>Directly sourced branded, high-demand watches from importers and vendors.</li>
+                                        <li>Developed pricing strategies, marketing content, and promotional offers to drive online engagement.</li>
+                                        <li>Conducted market research and competitor analysis to identify growth opportunities and trends.</li>
+                                        <li>Assessing the financial feasibility and return on investment (ROI) of projects.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mm-date-block">
+                                <span class="mm-date-month">APR</span>
+                                <span class="mm-date-day">01</span>
+                                <span class="mm-date-year">2018</span>
+                                <span class="mm-date-status">2018 - 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Here's What I'm Doing -->
+            <div class="achievements-section" style="margin-top: 4.5rem;">
+                <div class="container">
+                    <h2 class="section-title">Here's What I'm Doing</h2>
+                    <p class="skills-description mobile-achievements-para">
+                        I shape my activities in ways that create value not only in my own life but also in the lives of others. So that people become responsible, good citizens of the digital world.
+                    </p>
+                    <div class="achievements-grid">
+                        <div class="achievements-card">
+                            <div class="achievements-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>Platform & Research</h3>
+                            <p>I work with network servers and cloud services, and I conduct research with a focus on compatibility and real-world solutions. I am open to collaborating on projects related to networking and research.</p>
+                        </div>
+                        <div class="achievements-card">
+                            <div class="achievements-icon">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <h3>Teaching & Mentorship</h3>
+                            <p>With over six years' experience as a private tutor beyond my professional job, I guide my students through the IT landscape, creating a space where curiosity and learning go hand in hand.</p>
+                        </div>
+                        <div class="achievements-card">
+                            <div class="achievements-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h3>Problem Solving</h3>
+                            <p>Selected as Campus Ambassador of the Month by Think Bright, recognizing my dedication to fostering connections and promoting initiatives on campus for turning ideas into action and creating meaningful experiences.</p>
+                        </div>
+                        <div class="achievements-card">
+                            <div class="achievements-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3>Development</h3>
+                            <p>Writing code is a hobby of mine, as it allows me to stay updated with the latest technology. I'd love the opportunity to collaborate with you, making your ideas real in your next web application.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <p class="education-description mobile-education-para">
+                The foundation for knowledge, skills, attitudes, beliefs, and habits is education. With this belief, I completed my B.Sc. in Engineering.
+            </p>
+        </div>
+
+        <!-- Drift Timeline (Drift Timeline Architecture cloned from https://drift-timeline.framer.website/) -->
+        <div class="drift-timeline-wrap" id="driftTimelineWrap">
+            <div class="drift-timeline-axis" aria-hidden="true"></div>
+
+            <div class="drift-timeline-viewport" id="driftTimelineViewport" role="region" aria-roledescription="carousel" aria-label="Education Timeline" tabindex="0">
+                <div class="drift-timeline-track" id="driftTimelineTrack">
+
+                    <!-- Milestone 1 (2020 - 2024) -->
+                    <div class="drift-timeline-slide active" role="group" aria-roledescription="slide" aria-label="1 of 4" aria-current="true" data-index="0">
+                        <div class="drift-year-container">
+                            <span class="drift-year-pill">2020 - 2024</span>
+                        </div>
+                        <div class="drift-connector" aria-hidden="true">
+                            <div class="drift-connector-line"></div>
+                        </div>
+                        <div class="drift-card-wrapper">
+                            <div class="drift-node-dot" aria-hidden="true"></div>
+                            <div class="drift-card">
+                                <div class="drift-card-header">
+                                    <div class="drift-card-icon">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <div class="drift-card-inst-tag">
+                                        <h4><a href="https://www.facebook.com/theuits" target="_blank" class="university-link">University of Information Technology &amp; Sciences</a></h4>
+                                    </div>
+                                </div>
+                                <h3 class="drift-card-title">Bachelor of Science (B.Sc.)</h3>
+                                <div class="drift-card-details">
+                                    <div class="drift-detail-row">
+                                        <span class="drift-detail-label">Program</span>
+                                        <span class="drift-detail-val">Information Technology</span>
+                                    </div>
+                                    <div class="drift-detail-row">
+                                        <span class="drift-detail-label">Campus Location</span>
+                                        <span class="drift-detail-val">Baridhara, Dhaka, Bangladesh</span>
+                                    </div>
+                                    <div class="drift-detail-row drift-detail-desc">
+                                        <p>I graduated with a Bachelor of Science in Engineering from UITS. For me, university life was more than just lectures and exams; it was a memorable chapter that shaped who I am today through academics, extracurricular activities, and faculty mentorship.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2 (2017 - 2019) -->
+                    <div class="drift-timeline-slide" role="group" aria-roledescription="slide" aria-label="2 of 4" data-index="1">
+                        <div class="drift-year-container">
+                            <span class="drift-year-pill">2017 - 2019</span>
+                        </div>
+                        <div class="drift-connector" aria-hidden="true">
+                            <div class="drift-connector-line"></div>
+                        </div>
+                        <div class="drift-card-wrapper">
+                            <div class="drift-node-dot" aria-hidden="true"></div>
+                            <div class="drift-card">
+                                <div class="drift-card-header">
+                                    <div class="drift-card-icon">
+                                        <i class="fas fa-school"></i>
+                                    </div>
+                                    <div class="drift-card-inst-tag">
+                                        <h4><a href="https://www.facebook.com/profile.php?id=100077272342852" target="_blank" class="college-link">Dhaka City International College</a></h4>
+                                    </div>
+                                </div>
+                                <h3 class="drift-card-title">Higher Secondary School Certificate (HSC)</h3>
+                                <div class="drift-card-details">
+                                    <div class="drift-detail-row">
+                                        <span class="drift-detail-label">Program</span>
+                                        <span class="drift-detail-val">Science Group</span>
+                                    </div>
+                                    <div class="drift-detail-row">
+                                        <span class="drift-detail-label">Campus Location</span>
+                                        <span class="drift-detail-val">Shantibagh, Dhaka, Bangladesh</span>
+                                    </div>
+                                    <div class="drift-detail-row drift-detail-desc">
+                                        <p>I completed a two-year science program where subjects like physics, math, and ICT quickly became favorites. It was during this period that I truly began to understand how science connects to the real world, inspiring my ongoing passion for technology.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3 (2011 - 2016) -->
+                    <div class="drift-timeline-slide" role="group" aria-roledescription="slide" aria-label="3 of 4" data-index="2">
+                        <div class="drift-year-container">
+                            <span class="drift-year-pill">2011 - 2016</span>
+                        </div>
+                        <div class="drift-connector" aria-hidden="true">
+                            <div class="drift-connector-line"></div>
+                        </div>
+                        <div class="drift-card-wrapper">
+                            <div class="drift-node-dot" aria-hidden="true"></div>
+                            <div class="drift-card">
+                                <div class="drift-card-header">
+                                    <div class="drift-card-icon">
+                                        <i class="fas fa-school"></i>
+                                    </div>
+                                    <div class="drift-card-inst-tag">
+                                        <h4><a href="https://www.facebook.com/mgbhs.edu.bd" target="_blank" class="school-link">Motijheel Govt. Boys' High School</a></h4>
+                                    </div>
+                                </div>
+                                <h3 class="drift-card-title">Secondary School Certificate (SSC)</h3>
+                                <div class="drift-card-details">
+                                    <div class="drift-detail-row">
+                                        <span class="drift-detail-label">Program</span>
+                                        <span class="drift-detail-val">Science Group</span>
+                                    </div>
+                                    <div class="drift-detail-row">
+                                        <span class="drift-detail-label">Campus Location</span>
+                                        <span class="drift-detail-val">Motijheel, Dhaka (Central Govt.)</span>
+                                    </div>
+                                    <div class="drift-detail-row drift-detail-desc">
+                                        <p>Studied for five years in the science group. My school life was full of memorable moments on the playground, school events, and building long-lasting friendships while cultivating an analytical mindset.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 4 (2005 - 2010) -->
+                    <div class="drift-timeline-slide" role="group" aria-roledescription="slide" aria-label="4 of 4" data-index="3">
+                        <div class="drift-year-container">
+                            <span class="drift-year-pill">2005 - 2010</span>
+                        </div>
+                        <div class="drift-connector" aria-hidden="true">
+                            <div class="drift-connector-line"></div>
+                        </div>
+                        <div class="drift-card-wrapper">
+                            <div class="drift-node-dot" aria-hidden="true"></div>
+                            <div class="drift-card">
+                                <div class="drift-card-header">
+                                    <div class="drift-card-icon">
+                                        <i class="fas fa-school"></i>
+                                    </div>
+                                    <div class="drift-card-inst-tag">
+                                        <h4><a href="https://www.facebook.com/shs108366" target="_blank" class="primary-school-link">Shantibagh High School</a></h4>
+                                    </div>
+                                </div>
+                                <h3 class="drift-card-title">Primary School Certificate (PSC)</h3>
+                                <div class="drift-card-details">
+                                    <div class="drift-detail-row">
+                                        <span class="drift-detail-label">Foundation</span>
+                                        <span class="drift-detail-val">Primary Education</span>
+                                    </div>
+                                    <div class="drift-detail-row">
+                                        <span class="drift-detail-label">Campus Location</span>
+                                        <span class="drift-detail-val">Shantibagh, Dhaka, Bangladesh</span>
+                                    </div>
+                                    <div class="drift-detail-row drift-detail-desc">
+                                        <p>Where my learning journey began. Beyond reading and writing, I learned discipline, respect, and the importance of staying curious, slowly shaping the mindset that drives my education today.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Drift Navigation Controls -->
+            <div class="drift-nav-wrapper">
+                <div class="drift-nav-pill">
+                    <button type="button" class="drift-nav-btn drift-prev-btn" id="driftPrevBtn" aria-label="Previous" disabled>
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                            <path d="M14.5 9h-11M8 4.5L3.5 9 8 13.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="drift-nav-btn drift-next-btn" id="driftNextBtn" aria-label="Next">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                            <path d="M3.5 9h11M10 4.5L14.5 9 10 13.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="skills-description mobile-skills-para">
+                Keeping up with technology is key to professional advancement. So, I dedicated myself to learning many technologies. Here are my programming skills.
+                </p>
+            <div class="progress-bars-grid">
+                <div class="progress-bar-container">
+                    <div class="language-name">HTML5</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-percentage="88" data-level="Advanced"></div>
+                        <div class="progress-callout skill-advanced mobile-callout-shift">Advanced</div>
+                    </div>
+                </div>
+                
+                <div class="progress-bar-container">
+                    <div class="language-name">JAVASCRIPT</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-percentage="71" data-level="Intermediate"></div>
+                        <div class="progress-callout skill-intermediate mobile-callout-shift">Intermediate</div>
+                    </div>
+                </div>
+                
+                <div class="progress-bar-container">
+                    <div class="language-name">CSS</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-percentage="88" data-level="Advanced"></div>
+                        <div class="progress-callout skill-advanced mobile-callout-shift">Advanced</div>
+                    </div>
+                </div>
+                
+                <div class="progress-bar-container">
+                    <div class="language-name">C++</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-percentage="73" data-level="Intermediate"></div>
+                        <div class="progress-callout skill-intermediate mobile-callout-shift">Intermediate</div>
+                    </div>
+                </div>
+                
+                <div class="progress-bar-container">
+                    <div class="language-name">PYTHON</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-percentage="67" data-level="Intermediate"></div>
+                        <div class="progress-callout skill-intermediate mobile-callout-shift">Intermediate</div>
+                    </div>
+                </div>
+                
+                <div class="progress-bar-container">
+                    <div class="language-name">JAVA</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-percentage="45" data-level="Basic"></div>
+                        <div class="progress-callout skill-basic mobile-callout-shift">Basic</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Skills Section -->
+    <section id="other-skills" class="other-skills-section">
+      <div class="container">
+        <h2 class="section-title">Other Skills</h2>
+                <p class="other-skills-description mobile-other-skills-para">
+                    To live in the real world, one needs basic knowledge as well as academic skills. I think I have the following abilities.
+                </p>
+        <div class="other-skills-grid">
+          <div class="other-skill-card">
+            <div class="circular-progress" data-percentage="92">
+              <div class="progress-circle">
+                <svg class="progress-svg" viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#023e8a"/>
+                      <stop offset="100%" style="stop-color:#0096c7"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="progress-bg" cx="50" cy="50" r="45" stroke="rgba(255,255,255,0.2)" stroke-width="2" fill="none"/>
+                  <circle class="progress-fill" cx="50" cy="50" r="45" stroke="url(#gradient1)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                </svg>
+                <div class="progress-text">Professional</div>
+              </div>
+            </div>
+            <span>COMMUNICATION</span>
+          </div>
+                    <div class="other-skill-card">
+                        <div class="circular-progress os-bar-mobile organization" data-percentage="68">
+              <div class="progress-circle">
+                <svg class="progress-svg" viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#023e8a"/>
+                      <stop offset="100%" style="stop-color:#0096c7"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="progress-bg" cx="50" cy="50" r="45" stroke="rgba(255,255,255,0.2)" stroke-width="2" fill="none"/>
+                  <circle class="progress-fill" cx="50" cy="50" r="45" stroke="url(#gradient2)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                </svg>
+                <div class="progress-text">Intermediate</div>
+              </div>
+            </div>
+            <span>ORGANIZATION</span>
+          </div>
+                    <div class="other-skill-card">
+                        <div class="circular-progress" data-percentage="85">
+              <div class="progress-circle">
+                <svg class="progress-svg" viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#023e8a"/>
+                      <stop offset="100%" style="stop-color:#0096c7"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="progress-bg" cx="50" cy="50" r="45" stroke="rgba(255,255,255,0.2)" stroke-width="2" fill="none"/>
+                  <circle class="progress-fill" cx="50" cy="50" r="45" stroke="url(#gradient3)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                </svg>
+                <div class="progress-text">Advanced</div>
+              </div>
+            </div>
+            <span>LEARNING</span>
+          </div>
+                    <div class="other-skill-card">
+                        <div class="circular-progress os-bar-mobile planning" data-percentage="68">
+              <div class="progress-circle">
+                <svg class="progress-svg" viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#023e8a"/>
+                      <stop offset="100%" style="stop-color:#0096c7"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="progress-bg" cx="50" cy="50" r="45" stroke="rgba(255,255,255,0.2)" stroke-width="2" fill="none"/>
+                  <circle class="progress-fill" cx="50" cy="50" r="45" stroke="url(#gradient4)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                </svg>
+                <div class="progress-text">Intermediate</div>
+              </div>
+            </div>
+            <span>PLANNING</span>
+          </div>
+                    <div class="other-skill-card">
+                        <div class="circular-progress os-bar-mobile programming" data-percentage="70">
+              <div class="progress-circle">
+                <svg class="progress-svg" viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="gradient5" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#023e8a"/>
+                      <stop offset="100%" style="stop-color:#0096c7"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="progress-bg" cx="50" cy="50" r="45" stroke="rgba(255,255,255,0.2)" stroke-width="2" fill="none"/>
+                  <circle class="progress-fill" cx="50" cy="50" r="45" stroke="url(#gradient5)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                </svg>
+                <div class="progress-text">Intermediate</div>
+              </div>
+            </div>
+            <span>PROGRAMMING</span>
+          </div>
+                    <div class="other-skill-card">
+                        <div class="circular-progress os-bar-mobile problem-solving" data-percentage="67">
+              <div class="progress-circle">
+                <svg class="progress-svg" viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="gradient6" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#023e8a"/>
+                      <stop offset="100%" style="stop-color:#0096c7"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="progress-bg" cx="50" cy="50" r="45" stroke="rgba(255,255,255,0.2)" stroke-width="2" fill="none"/>
+                  <circle class="progress-fill" cx="50" cy="50" r="45" stroke="url(#gradient6)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                </svg>
+                <div class="progress-text">Intermediate</div>
+              </div>
+            </div>
+            <span>PROBLEM SOLVING</span>
+          </div>
+                    <div class="other-skill-card">
+                        <div class="circular-progress os-bar-mobile creative-writing" data-percentage="62">
+              <div class="progress-circle">
+                <svg class="progress-svg" viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="gradient7" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#023e8a"/>
+                      <stop offset="100%" style="stop-color:#0096c7"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="progress-bg" cx="50" cy="50" r="45" stroke="rgba(255,255,255,0.2)" stroke-width="2" fill="none"/>
+                  <circle class="progress-fill" cx="50" cy="50" r="45" stroke="url(#gradient7)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                </svg>
+                <div class="progress-text">Pre-Intermediate</div>
+              </div>
+            </div>
+            <span>CREATIVE WRITING</span>
+          </div>
+                    <div class="other-skill-card">
+                        <div class="circular-progress os-bar-mobile marketing" data-percentage="63">
+              <div class="progress-circle">
+                <svg class="progress-svg" viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="gradient8" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#023e8a"/>
+                      <stop offset="100%" style="stop-color:#0096c7"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="progress-bg" cx="50" cy="50" r="45" stroke="rgba(255,255,255,0.2)" stroke-width="2" fill="none"/>
+                  <circle class="progress-fill" cx="50" cy="50" r="45" stroke="url(#gradient8)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                </svg>
+                <div class="progress-text">Pre-Intermediate</div>
+              </div>
+            </div>
+            <span>MARKETING</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Language Proficiency Section -->
+    <section id="language-proficiency" class="language-proficiency-section">
+      <div class="container">
+        <h2 class="section-title">Language Proficiency</h2>
+                <p class="language-proficiency-description mobile-language-para">
+                    Outside of my own tongue, I enjoy learning other languages. Here are some languages that I know; check them out!
+                </p>
+        <div class="language-list">
+          <div class="language-circle-container">
+            <div class="language-name">ENGLISH</div>
+            <div class="progress-bar">
+              <div class="progress-fill" data-percentage="81" data-level="B2 Level Proficient" style="background:#000000; background-image:none;"></div>
+              <div class="progress-callout mobile-lang-callout-shift">B2 Level Proficient</div>
+            </div>
+          </div>
+          
+          <div class="language-circle-container">
+            <div class="language-name">BENGALI</div>
+            <div class="progress-bar">
+              <div class="progress-fill" data-percentage="92" data-level="Native" style="background:#000000; background-image:none;"></div>
+              <div class="progress-callout mobile-lang-callout-shift">Native</div>
+            </div>
+          </div>
+          
+          <div class="language-circle-container">
+            <div class="language-name">GERMAN (DEUTSCH)</div>
+            <div class="progress-bar">
+              <div class="progress-fill" data-percentage="35" data-level="Limited Working Proficiency" style="background:#000000; background-image:none;"></div>
+              <div class="progress-callout mobile-lang-callout-shift">Limited Working Proficiency</div>
+            </div>
+          </div>
+          
+          <div class="language-circle-container">
+            <div class="language-name">HINDI</div>
+            <div class="progress-bar">
+              <div class="progress-fill" data-percentage="69" data-level="Professional Working Proficiency" style="background:#000000; background-image:none;"></div>
+              <div class="progress-callout mobile-lang-callout-shift">Professional Working Proficiency</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Competencies Section -->
+    <section id="core-competencies" class="core-competencies-section">
+      <div class="container">
+        <h2 class="section-title">Core Competencies</h2>
+        <p class="core-competencies-description mobile-core-competencies-para">
+            These are my professional competencies across networking, tools, and key concepts in IT infrastructure management.
+        </p>
+        
+        <!-- Proficient Level -->
+        <div class="competency-level">
+          <h3 class="competency-level-title proficient-level">
+            <i class="fas fa-star"></i> Proficient
+          </h3>
+          <div class="competency-badges">
+            <span class="competency-badge badge-proficient">
+              <i class="fas fa-network-wired"></i> Networking (TCP/IP, LAN/WAN, IPv4/IPv6 Addressing, Routing Protocols)
+            </span>
+            <span class="competency-badge badge-proficient">
+              <i class="fas fa-sitemap"></i> Network Configuration
+            </span>
+          </div>
+        </div>
+
+        <!-- Comfortable Level -->
+        <div class="competency-level">
+          <h3 class="competency-level-title comfortable-level">
+            <i class="fas fa-check-circle"></i> Comfortable
+          </h3>
+          <div class="competency-badges">
+            <span class="competency-badge badge-comfortable">
+              <i class="fas fa-shield-alt"></i> Sophos Firewall
+            </span>
+            <span class="competency-badge badge-comfortable">
+              <i class="fas fa-laptop-code"></i> Packet Tracer
+            </span>
+            <span class="competency-badge badge-comfortable">
+              <i class="fas fa-wifi"></i> Wireshark
+            </span>
+            <span class="competency-badge badge-comfortable">
+              <i class="fas fa-server"></i> Windows Server
+            </span>
+            <span class="competency-badge badge-comfortable">
+              <i class="fab fa-linux"></i> Linux
+            </span>
+            <span class="competency-badge badge-comfortable">
+              <i class="fas fa-cube"></i> Virtualization
+            </span>
+            <span class="competency-badge badge-comfortable">
+              <i class="fas fa-code-branch"></i> GitHub
+            </span>
+          </div>
+        </div>
+
+        <!-- Familiar Level -->
+        <div class="competency-level">
+          <h3 class="competency-level-title familiar-level">
+            <i class="fas fa-lightbulb"></i> Familiar
+          </h3>
+          <div class="competency-badges">
+            <span class="competency-badge badge-familiar">
+              <i class="fas fa-layer-group"></i> OSI & TCP/IP Models
+            </span>
+            <span class="competency-badge badge-familiar">
+              <i class="fas fa-project-diagram"></i> IPv4/IPv6
+            </span>
+            <span class="competency-badge badge-familiar">
+              <i class="fas fa-broadcast-tower"></i> Wireless Configuration
+            </span>
+            <span class="competency-badge badge-familiar">
+              <i class="fas fa-lock"></i> Cybersecurity Concepts
+            </span>
+          </div>
+        </div>
+
+        <!-- Additional Skills -->
+        <div class="competency-level">
+          <h3 class="competency-level-title additional-level">
+            <i class="fas fa-plus-circle"></i> Additional
+          </h3>
+          <div class="competency-badges">
+            <span class="competency-badge badge-additional">
+              <i class="fas fa-users"></i> Team Collaboration
+            </span>
+            <span class="competency-badge badge-additional">
+              <i class="fas fa-brain"></i> Critical Thinking
+            </span>
+            <span class="competency-badge badge-additional">
+              <i class="fas fa-file-alt"></i> Technical Documentation
+            </span>
+            <span class="competency-badge badge-additional">
+              <i class="fab fa-windows"></i> MS Office Suite (Word, Excel, PowerPoint)
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            
+            <!-- Testimonial Swipe Projects Deck (https://testimonialswipe.framer.website/) -->
+            <div class="ts-stage" id="projectDeckStage" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Featured Projects Deck">
+                <!-- Left Column: Project Details -->
+                <div class="ts-details">
+                    <div class="ts-counter-row">
+                        <span class="ts-count-curr" id="tsCurrIdx">01</span>
+                        <span class="ts-count-total" id="tsTotalCount">/ 05</span>
+                        <span class="ts-counter-line"></span>
+                    </div>
+
+                    <div id="tsContentWrap">
+                        <div class="ts-headline ts-rise" id="tsHeadline">Enterprise Core Network Redesign & Zero-Downtime Deployment</div>
+                        <div class="ts-quote ts-rise" id="tsQuote">“Complete overhaul of corporate routing, switching, and firewall architecture with multi-VLAN segmentation and redundant gateway failover.”</div>
+                        <div class="ts-meta-row ts-rise">
+                            <div class="ts-avatar" id="tsAvatar">
+                                <span>RH</span>
+                            </div>
+                            <div class="ts-author-info">
+                                <div class="ts-author-name" id="tsAuthorName">Robin Hossain</div>
+                                <div class="ts-author-role" id="tsAuthorRole">Network Architecture & Infrastructure Lead</div>
+                            </div>
+                            <a href="#" class="ts-link" id="tsLink" target="_blank" rel="noopener noreferrer">
+                                <span>View Details</span>
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                                    <path d="M2.5 7.5 L7.5 2.5 M3.5 2.5 H7.5 V6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Controls row -->
+                    <div class="ts-controls-row">
+                        <button class="ts-btn ts-btn-prev" id="tsPrevBtn" type="button" aria-label="Previous project">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M10 3.5 L5.5 8 L10 12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+
+                        <div class="ts-btn-next-wrap">
+                            <svg class="ts-progress-ring" viewBox="0 0 100 100" aria-hidden="true">
+                                <circle class="ts-ring-track" cx="50" cy="50" r="47" />
+                                <circle class="ts-ring-fill" id="tsRingFill" cx="50" cy="50" r="47" />
+                            </svg>
+                            <button class="ts-btn ts-btn-next" id="tsNextBtn" type="button" aria-label="Next project">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 3.5 L10.5 8 L6 12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="ts-hint" aria-hidden="true">
+                            <svg width="18" height="10" viewBox="0 0 18 10" fill="none">
+                                <path d="M1 5 H17 M4 2 L1 5 L4 8 M14 2 L17 5 L14 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>DRAG THE CARD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Card Deck Stack -->
+                <div class="ts-deck-col" id="tsDeckCol" aria-hidden="true">
+                    <!-- Populated and managed dynamically by initProjectsSwipeDeck() -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="achievements-section">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            
+            <!-- Portfolio Tab Navigation -->
+            <div class="portfolio-tabs">
+                <button class="portfolio-tab active" data-tab="certifications">Certifications</button>
+                <button class="portfolio-tab" data-tab="research">Research</button>
+                <button class="portfolio-tab" data-tab="articles">Featured Articles</button>
+                <button class="portfolio-tab" data-tab="achievements">Achievements</button>
+                <button class="portfolio-tab" data-tab="places">Visited Places</button>
+                <button class="portfolio-tab" data-tab="photography">Timeline</button>
+            </div>
+            
+            <!-- Portfolio Content Container -->
+            <div class="portfolio-content">
+                                    <!-- Certifications Tab Content (Testimonial Haze: https://testimonialhaze.framer.website/) -->
+                <div class="tab-content" id="certifications-content">
+                    <div class="cert-haze-wrap" id="certHazeWrap">
+                        <!-- Dynamic Background Haze Aura with Blur & Noise Grain -->
+                        <div class="cert-haze-backdrop" aria-hidden="true">
+                            <div class="cert-haze-mesh" id="certHazeMesh" style="background-image: url('assets/img/portfolio/certifications/networking-devices-and-initial-configuration.png');"></div>
+                            <div class="cert-haze-grain"></div>
+                            <div class="cert-haze-vignette"></div>
+                        </div>
+
+                        <!-- Haze Header -->
+                        <div class="cert-haze-header">
+                            <div class="cert-haze-header-info">
+                                <div class="cert-haze-badge">
+                                    <span class="cert-haze-badge-bar"></span>
+                                    <span>CREDENTIALS</span>
+                                </div>
+                                <h3 class="cert-haze-headline">Validated technical expertise & achievements</h3>
+                            </div>
+
+                            <!-- Sleek Translucent Controls -->
+                            <div class="cert-haze-nav">
+                                <button type="button" class="cert-haze-nav-btn cert-haze-prev" id="certHazePrev" aria-label="Previous certification">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="15 18 9 12 15 6"></polyline>
+                                    </svg>
+                                </button>
+                                <button type="button" class="cert-haze-nav-btn cert-haze-next" id="certHazeNext" aria-label="Next certification">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="9 18 15 12 9 6"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 3D Carousel Stage with Center Card & Peek Cards -->
+                        <div class="cert-haze-stage" id="certHazeStage" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Certifications Slider">
+                            <div class="cert-haze-track" id="certHazeTrack">
+                        <!-- Certification Haze Card 1 -->
+                        <article class="cert-haze-card" data-index="0" data-state="active">
+                            <div class="cert-haze-media">
+                                <div class="cert-haze-img-wrap">
+                                    <img src="assets/img/portfolio/certifications/networking-devices-and-initial-configuration.png" alt="Networking Devices and Initial Configuration" draggable="false" loading="lazy">
+                                </div>
+                                <div class="cert-haze-pill">Cisco Certified</div>
+                            </div>
+                            <div class="cert-haze-body">
+                                <div class="cert-haze-watermark" aria-hidden="true">
+                                    <svg width="84" height="84" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="cert-haze-topic-row">
+                                    <span class="cert-haze-accent-bar"></span>
+                                    <span class="cert-haze-topic">Cisco Networking Academy</span>
+                                </div>
+                                <h4 class="cert-haze-card-title">Networking Devices and Initial Configuration</h4>
+                                <p class="cert-haze-description">Hands-on experience with Cisco Packet Tracer, configuring routers and switches, IPv4/IPv6 subnetting, initial device security, connectivity testing, and systematic network troubleshooting.</p>
+                                <div class="cert-haze-footer">
+                                    <div class="cert-haze-recipient-wrap">
+                                        <span class="cert-haze-recipient-name">Robin Hossain</span>
+                                        <a href="https://www.credly.com/badges/0713df05-7c95-4f18-b73c-11947721c1ee/public_url" target="_blank" rel="noopener noreferrer" class="cert-haze-verify-btn" aria-label="Verify Networking Devices and Initial Configuration on Credly">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                            <span>Verify Credential</span>
+                                        </a>
+                                    </div>
+                                    <div class="cert-haze-counter">01 — 09</div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- Certification Haze Card 2 -->
+                        <article class="cert-haze-card" data-index="1" data-state="peek-right">
+                            <div class="cert-haze-media">
+                                <div class="cert-haze-img-wrap">
+                                    <img src="assets/img/portfolio/certifications/networking-basics.png" alt="Networking Basics" draggable="false" loading="lazy">
+                                </div>
+                                <div class="cert-haze-pill">Network Systems</div>
+                            </div>
+                            <div class="cert-haze-body">
+                                <div class="cert-haze-watermark" aria-hidden="true">
+                                    <svg width="84" height="84" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="cert-haze-topic-row">
+                                    <span class="cert-haze-accent-bar"></span>
+                                    <span class="cert-haze-topic">Cisco Networking Academy</span>
+                                </div>
+                                <h4 class="cert-haze-card-title">Networking Basics</h4>
+                                <p class="cert-haze-description">Practical competencies in network architectures, OSI and TCP/IP models, data transmission, cabling standards, transport layer operations, and building home wireless networks with Packet Tracer.</p>
+                                <div class="cert-haze-footer">
+                                    <div class="cert-haze-recipient-wrap">
+                                        <span class="cert-haze-recipient-name">Robin Hossain</span>
+                                        <a href="https://www.credly.com/badges/3f950134-8643-4fea-afca-e2d91b200811/public_url" target="_blank" rel="noopener noreferrer" class="cert-haze-verify-btn" aria-label="Verify Networking Basics on Credly">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                            <span>Verify Credential</span>
+                                        </a>
+                                    </div>
+                                    <div class="cert-haze-counter">02 — 09</div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- Certification Haze Card 3 -->
+                        <article class="cert-haze-card" data-index="2" data-state="hidden">
+                            <div class="cert-haze-media">
+                                <div class="cert-haze-img-wrap">
+                                    <img src="assets/img/portfolio/certifications/computer-hardware-basics.png" alt="Computer Hardware Basics" draggable="false" loading="lazy">
+                                </div>
+                                <div class="cert-haze-pill">Computer Hardware</div>
+                            </div>
+                            <div class="cert-haze-body">
+                                <div class="cert-haze-watermark" aria-hidden="true">
+                                    <svg width="84" height="84" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="cert-haze-topic-row">
+                                    <span class="cert-haze-accent-bar"></span>
+                                    <span class="cert-haze-topic">Cisco Networking Academy</span>
+                                </div>
+                                <h4 class="cert-haze-card-title">Computer Hardware Basics</h4>
+                                <p class="cert-haze-description">Skills in computer architecture, hardware diagnostics, installing and upgrading motherboard components, storage drives, and performing systematic device maintenance and troubleshooting procedures.</p>
+                                <div class="cert-haze-footer">
+                                    <div class="cert-haze-recipient-wrap">
+                                        <span class="cert-haze-recipient-name">Robin Hossain</span>
+                                        <a href="https://www.credly.com/badges/ce4afd48-2d49-46b8-bb7d-6e4f3d51a9e1/public_url" target="_blank" rel="noopener noreferrer" class="cert-haze-verify-btn" aria-label="Verify Computer Hardware Basics on Credly">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                            <span>Verify Credential</span>
+                                        </a>
+                                    </div>
+                                    <div class="cert-haze-counter">03 — 09</div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- Certification Haze Card 4 -->
+                        <article class="cert-haze-card" data-index="3" data-state="hidden">
+                            <div class="cert-haze-media">
+                                <div class="cert-haze-img-wrap">
+                                    <img src="assets/img/portfolio/certifications/introduction-to-cybersecurity.png" alt="Introduction to Cybersecurity" draggable="false" loading="lazy">
+                                </div>
+                                <div class="cert-haze-pill">Security Defense</div>
+                            </div>
+                            <div class="cert-haze-body">
+                                <div class="cert-haze-watermark" aria-hidden="true">
+                                    <svg width="84" height="84" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="cert-haze-topic-row">
+                                    <span class="cert-haze-accent-bar"></span>
+                                    <span class="cert-haze-topic">Cisco Networking Academy</span>
+                                </div>
+                                <h4 class="cert-haze-card-title">Introduction to Cybersecurity</h4>
+                                <p class="cert-haze-description">Essential skills in identifying vulnerabilities, defending against cyber attacks, understanding malware taxonomy, privacy implications, and enterprise security defense frameworks.</p>
+                                <div class="cert-haze-footer">
+                                    <div class="cert-haze-recipient-wrap">
+                                        <span class="cert-haze-recipient-name">Robin Hossain</span>
+                                        <a href="https://www.credly.com/badges/fa00d36c-f01a-4931-bbfe-873a2c4dc1bc/public_url" target="_blank" rel="noopener noreferrer" class="cert-haze-verify-btn" aria-label="Verify Introduction to Cybersecurity on Credly">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                            <span>Verify Credential</span>
+                                        </a>
+                                    </div>
+                                    <div class="cert-haze-counter">04 — 09</div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- Certification Haze Card 5 -->
+                        <article class="cert-haze-card" data-index="4" data-state="hidden">
+                            <div class="cert-haze-media">
+                                <div class="cert-haze-img-wrap">
+                                    <img src="assets/img/portfolio/certifications/introduction-to-iot.png" alt="Introduction to IoT" draggable="false" loading="lazy">
+                                </div>
+                                <div class="cert-haze-pill">IoT & Systems</div>
+                            </div>
+                            <div class="cert-haze-body">
+                                <div class="cert-haze-watermark" aria-hidden="true">
+                                    <svg width="84" height="84" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="cert-haze-topic-row">
+                                    <span class="cert-haze-accent-bar"></span>
+                                    <span class="cert-haze-topic">Cisco Networking Academy</span>
+                                </div>
+                                <h4 class="cert-haze-card-title">Introduction to IoT</h4>
+                                <p class="cert-haze-description">Understanding IoT topologies, sensor telemetry, edge connectivity, automation workflows, and digital transformation architectures linking hardware devices to software services.</p>
+                                <div class="cert-haze-footer">
+                                    <div class="cert-haze-recipient-wrap">
+                                        <span class="cert-haze-recipient-name">Robin Hossain</span>
+                                        <a href="https://www.credly.com/badges/b673f3e4-6db1-4e2b-bb25-d8bf432d421e/public_url" target="_blank" rel="noopener noreferrer" class="cert-haze-verify-btn" aria-label="Verify Introduction to IoT on Credly">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                            <span>Verify Credential</span>
+                                        </a>
+                                    </div>
+                                    <div class="cert-haze-counter">05 — 09</div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- Certification Haze Card 6 -->
+                        <article class="cert-haze-card" data-index="5" data-state="hidden">
+                            <div class="cert-haze-media">
+                                <div class="cert-haze-img-wrap">
+                                    <img src="assets/img/portfolio/certifications/english-for-it-1.png" alt="English for IT 1" draggable="false" loading="lazy">
+                                </div>
+                                <div class="cert-haze-pill">Professional English</div>
+                            </div>
+                            <div class="cert-haze-body">
+                                <div class="cert-haze-watermark" aria-hidden="true">
+                                    <svg width="84" height="84" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="cert-haze-topic-row">
+                                    <span class="cert-haze-accent-bar"></span>
+                                    <span class="cert-haze-topic">Cisco Networking Academy</span>
+                                </div>
+                                <h4 class="cert-haze-card-title">English for IT 1</h4>
+                                <p class="cert-haze-description">Upper-intermediate (CEFR B2) English proficiency tailored for technology environments, software engineering communication, technical support, and cross-functional teams.</p>
+                                <div class="cert-haze-footer">
+                                    <div class="cert-haze-recipient-wrap">
+                                        <span class="cert-haze-recipient-name">Robin Hossain</span>
+                                        <a href="https://www.credly.com/badges/3978d326-b208-4499-a2c8-3cad6289c03d/public_url" target="_blank" rel="noopener noreferrer" class="cert-haze-verify-btn" aria-label="Verify English for IT 1 on Credly">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                            <span>Verify Credential</span>
+                                        </a>
+                                    </div>
+                                    <div class="cert-haze-counter">06 — 09</div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- Certification Haze Card 7 -->
+                        <article class="cert-haze-card" data-index="6" data-state="hidden">
+                            <div class="cert-haze-media">
+                                <div class="cert-haze-img-wrap">
+                                    <img src="assets/img/portfolio/certifications/english-for-it-2.png" alt="English for IT 2" draggable="false" loading="lazy">
+                                </div>
+                                <div class="cert-haze-pill">Advanced Technical</div>
+                            </div>
+                            <div class="cert-haze-body">
+                                <div class="cert-haze-watermark" aria-hidden="true">
+                                    <svg width="84" height="84" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="cert-haze-topic-row">
+                                    <span class="cert-haze-accent-bar"></span>
+                                    <span class="cert-haze-topic">Cisco Networking Academy</span>
+                                </div>
+                                <h4 class="cert-haze-card-title">English for IT 2</h4>
+                                <p class="cert-haze-description">Advanced technical communication skills for engineering documentation, system design proposals, client presentations, and collaborative software deliverables.</p>
+                                <div class="cert-haze-footer">
+                                    <div class="cert-haze-recipient-wrap">
+                                        <span class="cert-haze-recipient-name">Robin Hossain</span>
+                                        <a href="https://www.credly.com/badges/e8f46312-74a2-4d0a-89fb-d4c4d9897eb5/public_url" target="_blank" rel="noopener noreferrer" class="cert-haze-verify-btn" aria-label="Verify English for IT 2 on Credly">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                            <span>Verify Credential</span>
+                                        </a>
+                                    </div>
+                                    <div class="cert-haze-counter">07 — 09</div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- Certification Haze Card 8 -->
+                        <article class="cert-haze-card" data-index="7" data-state="hidden">
+                            <div class="cert-haze-media">
+                                <div class="cert-haze-img-wrap">
+                                    <img src="assets/img/portfolio/certifications/cybersecurity-awareness-learner-2025.png" alt="Cybersecurity Awareness Learner" draggable="false" loading="lazy">
+                                </div>
+                                <div class="cert-haze-pill">Cyber Defense</div>
+                            </div>
+                            <div class="cert-haze-body">
+                                <div class="cert-haze-watermark" aria-hidden="true">
+                                    <svg width="84" height="84" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="cert-haze-topic-row">
+                                    <span class="cert-haze-accent-bar"></span>
+                                    <span class="cert-haze-topic">CertiProf</span>
+                                </div>
+                                <h4 class="cert-haze-card-title">Cybersecurity Awareness Learner</h4>
+                                <p class="cert-haze-description">Demonstrated initiative in enterprise cyber hygiene, phishing and social engineering resistance, endpoint safeguarding, and threat-aware operational protocols.</p>
+                                <div class="cert-haze-footer">
+                                    <div class="cert-haze-recipient-wrap">
+                                        <span class="cert-haze-recipient-name">Robin Hossain</span>
+                                        <a href="https://www.credly.com/badges/02936f3d-f638-40f0-b762-c21a1198ac9e/public_url" target="_blank" rel="noopener noreferrer" class="cert-haze-verify-btn" aria-label="Verify Cybersecurity Awareness Learner on Credly">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                            <span>Verify Credential</span>
+                                        </a>
+                                    </div>
+                                    <div class="cert-haze-counter">08 — 09</div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- Certification Haze Card 9 -->
+                        <article class="cert-haze-card" data-index="8" data-state="peek-left">
+                            <div class="cert-haze-media">
+                                <div class="cert-haze-img-wrap">
+                                    <img src="assets/img/portfolio/certifications/introduction-to-critical-infrastructure-protection-icip.png" alt="Introduction to Critical Infrastructure Protection (ICIP)" draggable="false" loading="lazy">
+                                </div>
+                                <div class="cert-haze-pill">Infrastructure</div>
+                            </div>
+                            <div class="cert-haze-body">
+                                <div class="cert-haze-watermark" aria-hidden="true">
+                                    <svg width="84" height="84" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="cert-haze-topic-row">
+                                    <span class="cert-haze-accent-bar"></span>
+                                    <span class="cert-haze-topic">OPSWAT Academy</span>
+                                </div>
+                                <h4 class="cert-haze-card-title">Introduction to Critical Infrastructure Protection (ICIP)</h4>
+                                <p class="cert-haze-description">Safeguarding vital industrial and operating environments, critical network segmentation, operational technology (OT) defense principles, and OPSWAT security framework navigation.</p>
+                                <div class="cert-haze-footer">
+                                    <div class="cert-haze-recipient-wrap">
+                                        <span class="cert-haze-recipient-name">Robin Hossain</span>
+                                        <a href="https://www.credly.com/badges/086fa452-16c5-4b84-aabe-dc985bfa675e/public_url" target="_blank" rel="noopener noreferrer" class="cert-haze-verify-btn" aria-label="Verify Introduction to Critical Infrastructure Protection (ICIP) on Credly">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                            <span>Verify Credential</span>
+                                        </a>
+                                    </div>
+                                    <div class="cert-haze-counter">09 — 09</div>
+                                </div>
+                            </div>
+                        </article>
+                            </div>
+                        </div>
+
+                        <!-- Modern Pill Dash Pagination -->
+                        <div class="cert-haze-pagination" id="certHazePagination" role="tablist" aria-label="Certification slides">
+                <button type="button" class="cert-haze-dash active" data-index="0" aria-label="Go to certification 1"></button>
+                <button type="button" class="cert-haze-dash" data-index="1" aria-label="Go to certification 2"></button>
+                <button type="button" class="cert-haze-dash" data-index="2" aria-label="Go to certification 3"></button>
+                <button type="button" class="cert-haze-dash" data-index="3" aria-label="Go to certification 4"></button>
+                <button type="button" class="cert-haze-dash" data-index="4" aria-label="Go to certification 5"></button>
+                <button type="button" class="cert-haze-dash" data-index="5" aria-label="Go to certification 6"></button>
+                <button type="button" class="cert-haze-dash" data-index="6" aria-label="Go to certification 7"></button>
+                <button type="button" class="cert-haze-dash" data-index="7" aria-label="Go to certification 8"></button>
+                <button type="button" class="cert-haze-dash" data-index="8" aria-label="Go to certification 9"></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Research Tab Content -->
+                <div class="tab-content" id="research-content">
+                    <div class="certifications-section">
+                        <p class="certifications-description">For my final year project, I completed a thesis on predicting drinking water quality in Bangladesh using machine learning, in collaboration with my two friends.</p>
+                        
+                        <!-- Research Paper Card -->
+                        <div class="research-paper-card research-paper-card-wide">
+                            <div class="research-paper-preview">
+                                <div class="pdf-thumbnail">
+                                    <img src="assets/img/portfolio/research/uits_logo_without_bg.png" alt="University Logo" class="pdf-logo">
+                                </div>
+                            </div>
+                            
+                            <div class="research-paper-content">
+                                <h3 class="paper-title paper-title-mobile">Drinking Water Quality Prediction Based on Machine Learning Algorithms</h3>
+                                <p class="paper-subtitle paper-subtitle-mobile paper-subtitle-mobile-up"><a href="https://www.facebook.com/theuits" target="_blank" style="color: #7f1419; text-decoration: none; font-weight: bold; transition: color 0.3s ease;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#7f1419'"><strong>University of Information Technology & Sciences</strong></a></p>
+                                
+                                <div class="paper-metadata">
+                                    <div class="metadata-item">
+                                        <i class="fas fa-university metadata-icon-mobile"></i>
+                                        <span class="metadata-text-mobile">Comprehensive Academic Research Paper</span>
+                                    </div>
+                                    <div class="metadata-item">
+                                        <i class="fas fa-calendar metadata-icon-final-year-mobile"></i>
+                                        <span class="metadata-text-final-year-mobile">Final Year</span>
+                                    </div>
+                                </div>
+                                
+                                <p class="paper-abstract">In developing nations like Bangladesh, contaminated sources of drinking water are a serious public health concern. It explores how machine learning can predict water potability with greater accuracy and speed than traditional methods. Using a dataset of nine key water quality parameters, six models were tested: Logistic Regression, KNN, Decision Tree, Random Forest, SVM, and XGBoost. Among them, the Support Vector Machine Classifier achieved the highest accuracy (87.15%) after class imbalance adjustment and K-fold validation, demonstrating its effectiveness in identifying safe and unsafe water.</p>
+                                
+                                <div class="paper-actions">
+                                    <a href="https://drive.google.com/file/d/1hNXFVTEhuE9FCb6JobHdpr8Kce7PrFjx/view?usp=drive_link" target="_blank" class="btn-primary research-btn">
+                                        <i class="fas fa-eye"></i>
+                                        Read Full Paper
+                                    </a>
+                                    <a href="https://drive.google.com/uc?export=download&id=1hNXFVTEhuE9FCb6JobHdpr8Kce7PrFjx&confirm=t&uuid=1" class="btn-secondary research-btn research-btn-download-mobile" download>
+                                        <i class="fas fa-download"></i>
+                                        Download PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Articles Tab Content -->
+                <div class="tab-content" id="articles-content">
+                    <div class="certifications-section">
+                        <p class="certifications-description">Here is a selection of my published articles that showcase my passions and curiosity through writing.</p>
+
+                        <!-- Framer Synced Deck Component (https://cultural-universe-619242.framer.app/deck) -->
+                        <div class="framer-deck-wrap" id="articlesDeckWrap">
+                            <!-- Synchronized Deck Header (Active Title & Live Counter) -->
+                            <div class="deck-header">
+                                <div class="deck-title-sync">
+                                    <span class="deck-title-text" id="deckActiveTitle">Why Rebrand Twitter as ‘X’? Elon Musk’s ‘Everything App,’ Explained</span>
+                                </div>
+                                <div class="deck-counter-sync">
+                                    <span class="deck-counter-pill" id="deckActiveCounter">01 / 05</span>
+                                </div>
+                            </div>
+
+                            <!-- Fanned Cards Stage -->
+                            <div class="deck-stage" id="deckStage" role="region" aria-label="Featured Articles Deck">
+                                <!-- Card 1 (Lavender) -->
+                                <div class="deck-card deck-card-0 is-active" data-index="0" tabindex="0" role="article" aria-label="1. Why Rebrand Twitter as ‘X’? Elon Musk’s ‘Everything App,’ Explained">
+                                    <div class="deck-card-top">
+                                        <div class="deck-card-publisher">
+                                            <img src="assets/img/portfolio/featured articles/medium_logo.png" alt="Medium Logo" class="deck-publisher-logo" style="width: 24px !important; height: 24px !important; max-width: 24px !important; max-height: 24px !important;">
+                                            <span class="deck-publisher-name">Medium</span>
+                                        </div>
+                                        <span class="deck-card-num">01</span>
+                                    </div>
+                                    <div class="deck-card-body">
+                                        <div class="deck-meta-pills">
+                                            <span class="deck-meta-pill"><i class="fas fa-tag"></i> Everything App</span>
+                                            <span class="deck-meta-pill"><i class="fas fa-clock"></i> 3 min read</span>
+                                        </div>
+                                        <h4 class="deck-card-title">Why Rebrand Twitter as ‘X’? Elon Musk’s ‘Everything App,’ Explained</h4>
+                                        <p class="deck-card-abstract">Why did Elon Musk turn Twitter into X? Get a quick breakdown of the vision behind the rebrand and how it could evolve into an all-in-one “everything app.”</p>
+                                    </div>
+                                    <div class="deck-card-footer">
+                                        <span class="deck-date">August 2023</span>
+                                        <a href="https://medium.com/@imrobinhossain/why-rebrand-twitter-as-x-elon-musk-s-everything-app-explained-9bb5b2a29c6d" target="_blank" rel="noopener noreferrer" class="deck-read-btn" aria-label="Read Why Rebrand Twitter as ‘X’? on Medium">
+                                            <span>Read Article</span>
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Card 2 (Peach) -->
+                                <div class="deck-card deck-card-1" data-index="1" tabindex="0" role="article" aria-label="2. How Digital Twins Are Improving Transportation">
+                                    <div class="deck-card-top">
+                                        <div class="deck-card-publisher">
+                                            <img src="assets/img/portfolio/featured articles/medium_logo.png" alt="Medium Logo" class="deck-publisher-logo" style="width: 24px !important; height: 24px !important; max-width: 24px !important; max-height: 24px !important;">
+                                            <span class="deck-publisher-name">Medium</span>
+                                        </div>
+                                        <span class="deck-card-num">02</span>
+                                    </div>
+                                    <div class="deck-card-body">
+                                        <div class="deck-meta-pills">
+                                            <span class="deck-meta-pill"><i class="fas fa-tag"></i> Digital Twin Tech</span>
+                                            <span class="deck-meta-pill"><i class="fas fa-clock"></i> 4 min read</span>
+                                        </div>
+                                        <h4 class="deck-card-title">How Digital Twins Are Improving Transportation</h4>
+                                        <p class="deck-card-abstract">This article shows how digital twins can predict traffic issues, improve safety, and support smarter transportation planning, reducing congestion and improving efficiency.</p>
+                                    </div>
+                                    <div class="deck-card-footer">
+                                        <span class="deck-date">August 2023</span>
+                                        <a href="https://medium.com/@imrobinhossain/how-digital-twins-are-improving-transportation-5cbebd78a80b" target="_blank" rel="noopener noreferrer" class="deck-read-btn" aria-label="Read How Digital Twins Are Improving Transportation on Medium">
+                                            <span>Read Article</span>
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Card 3 (Mint) -->
+                                <div class="deck-card deck-card-2" data-index="2" tabindex="0" role="article" aria-label="3. SEO Year In Review 2023: The Year Of Generative AI">
+                                    <div class="deck-card-top">
+                                        <div class="deck-card-publisher">
+                                            <img src="assets/img/portfolio/featured articles/ysse_logo.jpg" alt="YSSE Blog Logo" class="deck-publisher-logo" style="width: 24px !important; height: 24px !important; max-width: 24px !important; max-height: 24px !important;">
+                                            <span class="deck-publisher-name">YSSE Blog</span>
+                                        </div>
+                                        <span class="deck-card-num">03</span>
+                                    </div>
+                                    <div class="deck-card-body">
+                                        <div class="deck-meta-pills">
+                                            <span class="deck-meta-pill"><i class="fas fa-tag"></i> Generative AI in SEO</span>
+                                            <span class="deck-meta-pill"><i class="fas fa-clock"></i> 4 min read</span>
+                                        </div>
+                                        <h4 class="deck-card-title">SEO Year In Review 2023: The Year Of Generative AI</h4>
+                                        <p class="deck-card-abstract">Discover how generative AI transformed SEO in 2023 — from game-changing AI search tools to fresh content strategies and surprising ethical dilemmas.</p>
+                                    </div>
+                                    <div class="deck-card-footer">
+                                        <span class="deck-date">January 2024</span>
+                                        <a href="https://ysseblog.com/seo-year-in-review-2023-the-year-of-generative-AI/" target="_blank" rel="noopener noreferrer" class="deck-read-btn" aria-label="Read SEO Year In Review 2023 on YSSE Blog">
+                                            <span>Read Article</span>
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Card 4 (Warm Amber) -->
+                                <div class="deck-card deck-card-3" data-index="3" tabindex="0" role="article" aria-label="4. Explosions And Exploration: Why 2023 Was An Exciting Year In Space">
+                                    <div class="deck-card-top">
+                                        <div class="deck-card-publisher">
+                                            <img src="assets/img/portfolio/featured articles/ysse_logo.jpg" alt="YSSE Blog Logo" class="deck-publisher-logo" style="width: 24px !important; height: 24px !important; max-width: 24px !important; max-height: 24px !important;">
+                                            <span class="deck-publisher-name">YSSE Blog</span>
+                                        </div>
+                                        <span class="deck-card-num">04</span>
+                                    </div>
+                                    <div class="deck-card-body">
+                                        <div class="deck-meta-pills">
+                                            <span class="deck-meta-pill"><i class="fas fa-tag"></i> Space Exploration</span>
+                                            <span class="deck-meta-pill"><i class="fas fa-clock"></i> 3 min read</span>
+                                        </div>
+                                        <h4 class="deck-card-title">Explosions And Exploration: Why 2023 Was An Exciting Year In Space</h4>
+                                        <p class="deck-card-abstract">An article describes how 2023 became a standout year for space exploration, marked by explosive rocket tests, major achievements like Chandrayaan-3, and rapid innovation.</p>
+                                    </div>
+                                    <div class="deck-card-footer">
+                                        <span class="deck-date">February 2024</span>
+                                        <a href="https://ysseblog.com/explosions-and-exploration-why-2023-was-an-exciting-year-in-space/" target="_blank" rel="noopener noreferrer" class="deck-read-btn" aria-label="Read Explosions And Exploration on YSSE Blog">
+                                            <span>Read Article</span>
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Card 5 (Silver / Ice) -->
+                                <div class="deck-card deck-card-4" data-index="4" tabindex="0" role="article" aria-label="5. The Art Of Matching Your Skills To Your Ideal Professional Path">
+                                    <div class="deck-card-top">
+                                        <div class="deck-card-publisher">
+                                            <img src="assets/img/portfolio/featured articles/ysse_logo.jpg" alt="YSSE Blog Logo" class="deck-publisher-logo" style="width: 24px !important; height: 24px !important; max-width: 24px !important; max-height: 24px !important;">
+                                            <span class="deck-publisher-name">YSSE Blog</span>
+                                        </div>
+                                        <span class="deck-card-num">05</span>
+                                    </div>
+                                    <div class="deck-card-body">
+                                        <div class="deck-meta-pills">
+                                            <span class="deck-meta-pill"><i class="fas fa-tag"></i> Career Development</span>
+                                            <span class="deck-meta-pill"><i class="fas fa-clock"></i> 5 min read</span>
+                                        </div>
+                                        <h4 class="deck-card-title">The Art Of Matching Your Skills To Your Ideal Professional Path</h4>
+                                        <p class="deck-card-abstract">Discover how to align your strengths and skills with a career path that suits you. Making informed choices begins with self-assessment and market demand.</p>
+                                    </div>
+                                    <div class="deck-card-footer">
+                                        <span class="deck-date">February 2024</span>
+                                        <a href="https://ysseblog.com/the-art-of-matching-your-skills-to-your-ideal-professional-path/" target="_blank" rel="noopener noreferrer" class="deck-read-btn" aria-label="Read The Art Of Matching Your Skills on YSSE Blog">
+                                            <span>Read Article</span>
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Synced Navigation Controls & Dots Indicator -->
+                            <div class="deck-controls">
+                                <button type="button" class="deck-nav-btn deck-prev-btn" id="deckPrevBtn" aria-label="Previous article">
+                                    <i class="fas fa-chevron-left"></i>
+                                    <span>Previous</span>
+                                </button>
+                                <div class="deck-dots" id="deckDots" role="tablist" aria-label="Deck pagination">
+                                    <button type="button" class="deck-dot active" data-index="0" role="tab" aria-selected="true" aria-label="Card 1"></button>
+                                    <button type="button" class="deck-dot" data-index="1" role="tab" aria-selected="false" aria-label="Card 2"></button>
+                                    <button type="button" class="deck-dot" data-index="2" role="tab" aria-selected="false" aria-label="Card 3"></button>
+                                    <button type="button" class="deck-dot" data-index="3" role="tab" aria-selected="false" aria-label="Card 4"></button>
+                                    <button type="button" class="deck-dot" data-index="4" role="tab" aria-selected="false" aria-label="Card 5"></button>
+                                </div>
+                                <button type="button" class="deck-nav-btn deck-next-btn" id="deckNextBtn" aria-label="Next article">
+                                    <span>Next</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Achievements Tab Content -->
+                <div class="tab-content" id="achievements-content">
+                    <div class="certifications-section">
+                        <p class="certifications-description">Throughout my academic journey, I have earned this recognition for my dedication to creative initiatives that advance education.</p>
+                        
+                        <!-- Campus Ambassadorship Showcase -->
+                        <div class="research-paper-card">
+                            <div class="research-paper-preview">
+                                <div class="pdf-thumbnail">
+                                    <img src="assets/img/portfolio/achievements/think_bright_logo.png" alt="Think Bright Logo" class="pdf-logo">
+                                </div>
+                            </div>
+                            <div class="research-paper-content">
+                                <h3 class="paper-title">Campus Ambassador</h3>
+                                <p class="paper-subtitle paper-subtitle-mobile"><a href="https://www.facebook.com/thinkbright.xyz" target="_blank" style="color: #f7931e; text-decoration: none; font-weight: bold; transition: color 0.3s ease;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#f7931e'">Think Bright</a> </p>
+                                <div class="paper-metadata metadata-left">
+                                    <div class="metadata-item">
+                                        <i class="fas fa-calendar"></i>
+                                        <span>April 2023 - September 2023</span>
+                                    </div>
+                                    <div class="metadata-item">
+                                        <i class="fas fa-trophy"></i>
+                                        <span>Monthly Recognition</span>
+                                    </div>
+                                    <div class="metadata-item">
+                                        <i class="fas fa-users"></i>
+                                        <span>Leadership Role</span>
+                                    </div>
+                                </div>
+                                <p class="paper-abstract">As a proud ambassador of Think Bright, I had the privilege of promoting its mission to diverse audiences and collaborating with like-minded individuals and organizations. This experience strengthened my belief in the power of education to inspire growth and innovation. I was honored to be selected as the Campus Ambassador of the Month for my contributions to advancing educational and creative initiatives.
+                                </p>
+                                <div class="paper-actions">
+                                    <a href="https://www.facebook.com/photo/?fbid=610498537854751&set=a.404964108408196" target="_blank" class="btn-primary research-btn research-btn-download-mobile" download>
+                                        <i class="fas fa-external-link-alt"></i>
+                                        View Recognition
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visited Places Tab Content -->
+                <div class="tab-content" id="places-content">
+                    <div class="certifications-section">
+                        <p class="certifications-description">Over the past few years, I have traveled across several districts across Bangladesh, enriching my perspective and shaping my worldview.</p>
+                        
+                        <!-- Showcase Card Component (https://showcasecardpreview.framer.website/) -->
+                        <div class="sc-card-wrap">
+                            <div class="sc-card" id="placesShowcaseCard">
+                                <!-- Main Top Container: Project Image + Overlay Info -->
+                                <div class="sc-main-container">
+                                    <div class="sc-image-wrapper">
+                                        <img src="assets/img/portfolio/visited places/visited_districts.png" alt="Visited Districts in Bangladesh" class="sc-project-img">
+                                        <div class="sc-image-scrim"></div>
+                                    </div>
+                                    <div class="sc-header-overlay">
+                                        <div class="sc-header-text">
+                                            <h3 class="sc-project-name">My Travel Experience</h3>
+                                            <p class="sc-project-category">19 Districts Explored · Bangladesh</p>
+                                        </div>
+                                        <a href="https://mytravmap.com/share/ee88d26f-c650-4dab-bc36-3a564cf9a858" target="_blank" rel="noopener noreferrer" class="sc-quick-link-btn" title="View Map">
+                                            <span>View Map</span>
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Expanded Content Drawer (Smooth Spring Reveal) -->
+                                <div class="sc-expanded-container">
+                                    <!-- Narrative Description -->
+                                    <p class="sc-description">
+                                        I've been to 19 districts in Bangladesh, and each trip has added a new story to my life. My first adventure began in Sylhet in 2016, right after my SSC exam; a trip with friends that still feels vividly alive. In 2025, I had a sudden yet thrilling trip to Chandpur with friends that turned into an unforgettable experience. And most recently, I went to Sirajganj with my colleagues. It made my travel experiences even more fun and friendlier together. Traveling, to me, is a way to see life through new perspectives, embrace cultures, and rediscover myself with every journey.
+                                    </p>
+
+                                    <!-- Overview / Highlight Header & Chips -->
+                                    <div class="sc-details-section">
+                                        <div class="sc-details-header">
+                                            <h4 class="sc-overview-title">Key Journey Milestones</h4>
+                                        </div>
+                                        <div class="sc-chips-row">
+                                            <div class="sc-chip">
+                                                <i class="fas fa-compass"></i>
+                                                <span>Sylhet (2016)</span>
+                                            </div>
+                                            <div class="sc-chip">
+                                                <i class="fas fa-route"></i>
+                                                <span>Chandpur (2025)</span>
+                                            </div>
+                                            <div class="sc-chip">
+                                                <i class="fas fa-users"></i>
+                                                <span>Sirajganj Journey</span>
+                                            </div>
+                                            <div class="sc-chip">
+                                                <i class="fas fa-map-marked-alt"></i>
+                                                <span>19 Districts</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Primary Action Button -->
+                                    <div class="sc-action-row">
+                                        <a href="https://mytravmap.com/share/ee88d26f-c650-4dab-bc36-3a564cf9a858" target="_blank" rel="noopener noreferrer" class="sc-primary-btn">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            <span>Explore Interactive Travel Map</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Bottom Toggle Trigger Bar (Signature Framer Chevron Pill) -->
+                                <div class="sc-toggle-bar">
+                                    <button type="button" class="sc-toggle-btn" id="scToggleBtn" aria-expanded="false" aria-label="Toggle Travel Details">
+                                        <span class="sc-toggle-label">View Details</span>
+                                        <svg class="sc-chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photography Tab Content -->
+                <div class="tab-content" id="photography-content">
+                    <div class="certifications-section">
+                        <p class="certifications-description">A collection of photos that capture memories from my life. Each picture tells a story of exploring the world, having adventures, and seeing its beauty.</p>
+                        
+                        <!-- Memory Album 3D Interactive Photo Book (Faithfully replicated from https://memoryalbum.framer.website/) -->
+                        <div class="memoryalbum-wrapper" id="memoryAlbumWrap" tabindex="0" role="region" aria-label="Photo book">
+                            <div class="ma-stage" id="maStage">
+                                <div class="ma-book-hub" id="maBookHub">
+                                    <div class="ma-board-base ma-board-left" id="maBoardLeft"></div>
+                                    <div class="ma-board-base ma-board-right" id="maBoardRight"></div>
+                                    <div class="ma-stack ma-stack-left" id="maStackLeft"></div>
+                                    <div class="ma-stack ma-stack-right" id="maStackRight"></div>
+                                    
+                                    <!-- Flat Base Pages -->
+                                    <div class="ma-flat-page ma-flat-left" id="maFlatLeft">
+                                        <div id="maFlatLeftContent"></div>
+                                        <div class="ma-cast-overlay" id="maCastLeft"></div>
+                                    </div>
+                                    <div class="ma-flat-page ma-flat-right" id="maFlatRight">
+                                        <div id="maFlatRightContent"></div>
+                                        <div class="ma-cast-overlay" id="maCastRight"></div>
+                                    </div>
+
+                                    <!-- Active 12-segment turning leaves container -->
+                                    <div id="maLeavesContainer" style="transform-style: preserve-3d;"></div>
+                                </div>
+                            </div>
+                            <div class="ma-controls">
+                                <button class="ma-btn" id="maPrevBtn" type="button" aria-label="Previous page">&lt;</button>
+                                <div class="ma-dots" id="maDots"></div>
+                                <button class="ma-btn" id="maNextBtn" type="button" aria-label="Next page">&gt;</button>
+                                <div class="ma-counter" id="maCounter">Cover / 11</div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- About Myself Section -->
+    <section id="about-myself" class="about-myself-section">
+        <canvas id="aboutMyselfBgCanvas" class="about-myself-bg-canvas" aria-hidden="true"></canvas>
+        <div class="about-myself-bg-overlay" aria-hidden="true"></div>
+        <div class="container">
+            <h2 class="section-title">About Myself</h2>
+            <div class="about-myself__inner">
+                <img class="about-myself__photo" src="assets/img/profile images/robin_hossain_about_myself_profile_image.jpg" alt="Portrait of Robin Hossain" loading="lazy" width="280" height="370">
+                <div class="about-myself__content">
+                    <p class="desktop-only"><span class="quote-icon-inline"><i class="fas fa-quote-left"></i></span>I'm someone who believes in clear, efficient communication and takes a disciplined approach to every task I take on. I value patience, which helps me stay focused on long-term goals and approach challenges with a proactive and positive mindset and adapt smoothly to different situations while maintaining consistency. I can work independently when needed but excel in collaborative settings, exchanging ideas and refining solutions with others.<span class="quote-icon-inline"><i class="fas fa-quote-right"></i></span></p>
+                    <p class="mobile-only1"><span class="quote-icon-inline"><i class="fas fa-quote-left"></i></span>I'm someone who believes in clear, efficient communication and takes a disciplined approach to every task I take on. I value patience, which helps me stay focused on long-term</p>
+                    <p class="mobile-only2">goals and approach challenges with a proactive and positive mindset and adapt smoothly to different situations while maintaining consistency. I can work independently when needed but excel in collaborative settings, exchanging ideas and refining solutions with others.<span class="quote-icon-inline"><i class="fas fa-quote-right"></i></span></p>
+                </div>
+                </div>
+            </div>
+    </section>
+
+            <!-- What my clients say Section (Testimonial Loom: https://testimonialloom.framer.website/) -->
+    <section id="clients" class="loom-testimonials-section">
+        <div class="loom-container">
+            <div class="loom-header">
+                <span class="loom-badge">CLIENT EXPERIENCES</span>
+                <h2 class="section-title">From People I’ve Worked With</h2>
+            </div>
+
+            <!-- Loom Interactive Stage -->
+            <div class="loom-stage" id="loomStage" role="region" aria-roledescription="testimonials" aria-label="Testimonials" tabindex="0">
+                <!-- Person Buttons (5 Single-Entity Avatars) -->
+                <button type="button" class="loom-person" data-index="0" data-on="1" aria-label="Priya Raghunathan, speaking now">
+                    <div class="loom-drift">
+                        <div class="loom-face">
+                            <span class="loom-initials">PR</span>
+                            <img src="assets/img/clients/priya_raghunathan.png" alt="Priya Raghunathan" draggable="false">
+                        </div>
+                        <svg class="loom-ringsvg" viewBox="0 0 36 36" aria-hidden="true">
+                            <circle cx="18" cy="18" r="16" fill="none" class="loom-ring-bg"></circle>
+                            <circle class="loom-prog" cx="18" cy="18" r="16" fill="none" pathLength="100"></circle>
+                        </svg>
+                    </div>
+                </button>
+                <button type="button" class="loom-person" data-index="1" data-on="0" aria-label="Hear from Tobias Renner">
+                    <div class="loom-drift">
+                        <div class="loom-face">
+                            <span class="loom-initials">TR</span>
+                            <img src="assets/img/clients/tobias_renner.jpg" alt="Tobias Renner" draggable="false">
+                        </div>
+                    </div>
+                </button>
+                <button type="button" class="loom-person" data-index="2" data-on="0" aria-label="Hear from Amara Sowande">
+                    <div class="loom-drift">
+                        <div class="loom-face">
+                            <span class="loom-initials">AS</span>
+                            <img src="assets/img/clients/amara_sowande.jpg" alt="Amara Sowande" draggable="false">
+                        </div>
+                    </div>
+                </button>
+                <button type="button" class="loom-person" data-index="3" data-on="0" aria-label="Hear from Marcus Delaine">
+                    <div class="loom-drift">
+                        <div class="loom-face">
+                            <span class="loom-initials">MD</span>
+                            <img src="assets/img/clients/marcus_delaine.jpg" alt="Marcus Delaine" draggable="false">
+                        </div>
+                    </div>
+                </button>
+                <button type="button" class="loom-person" data-index="4" data-on="0" aria-label="Hear from Sofia Marchetti">
+                    <div class="loom-drift">
+                        <div class="loom-face">
+                            <span class="loom-initials">SM</span>
+                            <img src="assets/img/clients/sofia_marchetti.jpg" alt="Sofia Marchetti" draggable="false">
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Speech Bubble Card -->
+                <div class="loom-bubble" id="loomBubble" data-narrow="0">
+                    <div class="loom-bubble-inner">
+                        <span class="loom-arrow" aria-hidden="true"></span>
+                        
+                        <!-- 5 Stars SVG -->
+                        <div class="loom-stars" aria-label="Rated 5 out of 5">
+                            <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.36 4.93 5.4.72-3.94 3.76.97 5.37L10 13.8l-4.79 2.58.97-5.37L2.24 7.25l5.4-.72L10 1.6z" fill="currentColor"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.36 4.93 5.4.72-3.94 3.76.97 5.37L10 13.8l-4.79 2.58.97-5.37L2.24 7.25l5.4-.72L10 1.6z" fill="currentColor"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.36 4.93 5.4.72-3.94 3.76.97 5.37L10 13.8l-4.79 2.58.97-5.37L2.24 7.25l5.4-.72L10 1.6z" fill="currentColor"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.36 4.93 5.4.72-3.94 3.76.97 5.37L10 13.8l-4.79 2.58.97-5.37L2.24 7.25l5.4-.72L10 1.6z" fill="currentColor"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.36 4.93 5.4.72-3.94 3.76.97 5.37L10 13.8l-4.79 2.58.97-5.37L2.24 7.25l5.4-.72L10 1.6z" fill="currentColor"/></svg>
+                        </div>
+
+                        <!-- Quote with Word Spans -->
+                        <p class="loom-quote" id="loomQuote"></p>
+
+                        <!-- Card Footer -->
+                        <div class="loom-meta" id="loomMeta">
+                            <div class="loom-author-wrap">
+                                <div class="loom-author-name" id="loomAuthorName">Priya Raghunathan</div>
+                                <div class="loom-author-role" id="loomAuthorRole">Studio Director, Northlight</div>
+                            </div>
+
+                            <div class="loom-nav-wrap">
+                                <span class="loom-counter" id="loomCounter">01 / 05</span>
+                                <div class="loom-buttons">
+                                    <button type="button" class="loom-btn loom-prev-btn" id="loomPrevBtn" aria-label="Previous testimonial">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="15 18 9 12 15 6"></polyline>
+                                        </svg>
+                                    </button>
+                                    <button type="button" class="loom-btn loom-next-btn" id="loomNextBtn" aria-label="Next testimonial">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="9 18 15 12 9 6"></polyline>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section — Framer Reveal Footer Animation Style -->
+    <section id="contact" class="contact-section lf">
+        <!-- Ambient Glow -->
+        <div class="lf-glow" aria-hidden="true"></div>
+
+        <div class="container lf-container">
+            <!-- Top Bar with animated draw line and status pill -->
+            <div class="lf-topbar">
+                <div class="lf-draw-line" aria-hidden="true"></div>
+                <div class="lf-topbar-content">
+                    <span class="lf-brand">Robin Hossain</span>
+                    <span class="lf-status">
+                        <span class="lf-dot" aria-hidden="true"></span>
+                        Available to work
+                    </span>
+                </div>
+            </div>
+
+            <!-- Main Content Row -->
+            <div class="contact-content lf-content">
+                <!-- Left: Framer Reveal Information -->
+                <div class="contact-info lf-info">
+                    <div class="lf-info-top">
+                        <!-- Headline: Single Line -->
+                        <h2 class="lf-headline">
+                            <span class="lf-mask-line">
+                                <span class="lf-mask-inner">Let's Work Together</span>
+                            </span>
+                        </h2>
+
+                        <!-- Email & CTA button (Upward directly under headline) -->
+                        <div class="lf-email-cta-row">
+                            <a href="mailto:robin.hossain@cutebd.biz" class="lf-mail">robin.hossain@cutebd.biz</a>
+
+                            <a href="https://drive.google.com/uc?export=download&id=1OZkAziAWQ4KGQuywJ7eFvD0B-HjmCJtN" class="btn-cv-download lf-cta-btn" download aria-label="Download Resume">
+                                <canvas class="btn-shader-canvas"></canvas>
+                                <div class="btn-shader-glow"></div>
+                                <span class="btn-shader-text">Download Resume</span>
+                                <span class="btn-shader-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3.75" y="3.75" width="16.5" height="16.5" rx="2" />
+                                        <path d="M8.25 12h7.5" />
+                                        <path d="M12.75 9l3 3-3 3" />
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- Recent.design App Icons 3D Glass Shelf (https://recent.design/app-icons) -->
+            <div class="hero-social-shelf" id="heroSocialShelf">
+                <!-- Social Media Heading -->
+                <p class="hero-social-heading">You can also find me on social media</p>
+
+                <!-- Aura Glows -->
+                <div class="hero-shelf-aura-cyan"></div>
+                <div class="hero-shelf-aura-purple"></div>
+
+                <!-- Top App Icon Row -->
+                <div class="hero-app-icon-row">
+                    <a href="https://facebook.com/imrobinhossain" target="_blank" class="hero-app-icon icon-facebook social-link" data-index="0" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span class="hero-app-tooltip">Facebook</span>
+                    </a>
+                    <a href="https://github.com/imrobinhossain" target="_blank" class="hero-app-icon icon-github social-link" data-index="1" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                        <span class="hero-app-tooltip">GitHub</span>
+                    </a>
+                    <a href="https://www.quora.com/profile/%E0%A6%AE%E0%A7%8B%E0%A6%B9%E0%A6%BE%E0%A6%AE%E0%A7%8D%E0%A6%AE%E0%A6%A6-%E0%A6%B0%E0%A6%AC%E0%A6%BF%E0%A6%A8-%E0%A6%B9%E0%A7%8B%E0%A6%B8%E0%A7%87%E0%A6%A8-Robin-Hossain" target="_blank" class="hero-app-icon icon-quora social-link" data-index="2" aria-label="Quora">
+                        <i class="fab fa-quora"></i>
+                        <span class="hero-app-tooltip">Quora</span>
+                    </a>
+                    <a href="https://twitter.com/imrobinhossain" target="_blank" class="hero-app-icon icon-twitter social-link" data-index="3" aria-label="X (formerly Twitter)">
+                        <i class="fa-brands fa-x-twitter"></i>
+                        <span class="hero-app-tooltip">X (formerly Twitter)</span>
+                    </a>
+                    <a href="https://wa.me/+8801770792411" target="_blank" class="hero-app-icon icon-whatsapp social-link" data-index="4" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span class="hero-app-tooltip">WhatsApp</span>
+                    </a>
+                    <a href="https://www.imdb.com/list/ls568020917/" target="_blank" class="hero-app-icon icon-imdb social-link" data-index="5" aria-label="IMDb">
+                        <i class="fab fa-imdb"></i>
+                        <span class="hero-app-tooltip">IMDb</span>
+                    </a>
+                </div>
+
+                <!-- Shelf Assembly -->
+                <div class="hero-shelf-assembly" aria-hidden="true">
+                    <div class="hero-shelf-pedestal">
+                        <!-- Inverted Reflections -->
+                        <div class="hero-shelf-reflections">
+                            <div class="hero-reflection-icon icon-facebook" data-ref-index="0"><i class="fab fa-facebook-f"></i></div>
+                            <div class="hero-reflection-icon icon-github" data-ref-index="1"><i class="fab fa-github"></i></div>
+                            <div class="hero-reflection-icon icon-quora" data-ref-index="2"><i class="fab fa-quora"></i></div>
+                            <div class="hero-reflection-icon icon-twitter" data-ref-index="3"><i class="fa-brands fa-x-twitter"></i></div>
+                            <div class="hero-reflection-icon icon-whatsapp" data-ref-index="4"><i class="fab fa-whatsapp"></i></div>
+                            <div class="hero-reflection-icon icon-imdb" data-ref-index="5"><i class="fab fa-imdb"></i></div>
+                        </div>
+                        <!-- Glare Highlights -->
+                        <div class="hero-shelf-glare"></div>
+                        <div class="hero-shelf-rim-top"></div>
+                        <div class="hero-shelf-rim-bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Details Columns Grid: Contact & Location only -->
+                    <div class="lf-details-grid">
+                        <div class="lf-detail-col">
+                            <span class="lf-col-title">Contact</span>
+                            <span class="lf-col-val"><a href="phone:+8801770-792411" class="lf-link">+(880)1770-792411</a></span>
+                        </div>
+                        <div class="lf-detail-col">
+                            <span class="lf-col-title">Location</span>
+                            <span class="lf-col-val">Dhaka, Bangladesh</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Framer Foundation Section (With description text in card body) -->
+                <div class="shader-card-stories lf-stories" id="shaderCardStories">
+                    <canvas class="shader-card-canvas" id="shaderCardCanvas"></canvas>
+                    <div class="shader-card-overlay"></div>
+                    <div class="shader-card-inner">
+
+                        <!-- Slide 1: Framer Foundations / Blue -->
+                        <div class="shader-story-slide active" data-story="0">
+                            <div class="shader-card-header">
+                                <div class="shader-card-titles">
+                                    <div class="shader-card-eyebrow">Open for Projects</div>
+                                    <div class="shader-card-context">Frames, stacks, and sizing</div>
+                                </div>
+                                <a href="#experience" class="shader-card-action-btn" aria-label="Explore details">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="shader-card-body">
+                                <p class="shader-card-description">I’m always open to new opportunities and exciting projects. Whether you need network setup, cybersecurity assessment, or technical support, let’s talk about how I can help bring your vision to life.</p>
+                            </div>
+                            <div class="shader-card-footer">
+                                <div class="shader-card-meta">Module 1 · 18 min</div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: Framer Foundations / Emerald -->
+                        <div class="shader-story-slide" data-story="1">
+                            <div class="shader-card-header">
+                                <div class="shader-card-titles">
+                                    <div class="shader-card-eyebrow">From Idea to Impact</div>
+                                    <div class="shader-card-context">Breakpoints, spacing, and scaling</div>
+                                </div>
+                                <a href="#skills" class="shader-card-action-btn" aria-label="Explore details">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="shader-card-body">
+                                <p class="shader-card-description">I’m driven by research that solves real-world problems. My next project aims to replace vehicle horns with a smarter, quieter alternative for peaceful roads everywhere. Want to collaborate? Let’s move this idea to impact.</p>
+                            </div>
+                            <div class="shader-card-footer">
+                                <div class="shader-card-meta">Module 2 · 22 min</div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: Framer Foundations / Dusty Wine -->
+                        <div class="shader-story-slide" data-story="2">
+                            <div class="shader-card-header">
+                                <div class="shader-card-titles">
+                                    <div class="shader-card-eyebrow">How I Work</div>
+                                    <div class="shader-card-context">Transitions, states, and feedback</div>
+                                </div>
+                                <a href="#contact" class="shader-card-action-btn" aria-label="Explore details">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="shader-card-body">
+                                <p class="shader-card-description">Networking and cybersecurity are my core strengths, backed by a habit of weighing options and finding the best solution. I explain complex ideas clearly and bring a technical approach, making me a reliable partner for any project.</p>
+                            </div>
+                            <div class="shader-card-footer">
+                                <div class="shader-card-meta">Module 3 · 16 min</div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Progress Segments -->
+                        <div class="shader-card-progress" role="progressbar" aria-label="Story Progress">
+                            <div class="shader-progress-segment" data-story="0"><div class="shader-progress-fill"></div></div>
+                            <div class="shader-progress-segment" data-story="1"><div class="shader-progress-fill"></div></div>
+                            <div class="shader-progress-segment" data-story="2"><div class="shader-progress-fill"></div></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+        <!-- Favourite Quote Section — Framer Text Reveal Style (lucky-event-452312.framer.app) -->
+    <section id="quote" class="quote-section nr-quote-section nr-inview">
+        <div class="container nr-container">
+            <!-- Eyebrow + Expanding Rule -->
+            <div class="nr-header">
+                <span class="nr-eyebrow">Philosophy · Words of Inspiration</span>
+                <span class="nr-rule" aria-hidden="true"></span>
+            </div>
+
+            <!-- Quote Text with word-by-word rise reveal -->
+            <div class="quote-content nr-quote-content">
+                <blockquote class="quote-text nr-quote-text" id="nrQuoteText" aria-label="Favorite Quote">
+                    <span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 0">"Every</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 1">one</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 2">of</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 3">us</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 4">is,</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 5">in</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 6">the</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 7">cosmic</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 8">perspective,</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 9">precious.</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 10">If</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 11">a</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 12">human</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 13">disagrees</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 14">with</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 15">you,</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 16">let</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 17">him</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 18">live.</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 19">In</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 20">a</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 21">hundred</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 22">billion</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 23">galaxies,</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 24">you</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 25">will</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 26">not</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 27">find</span> </span><span class="nr-word-wrap"><span class="nr-word" style="--word-idx: 28">another."</span> </span>
+                </blockquote>
+                <div class="quote-author nr-author">
+                    <span class="nr-author-dash">—</span>
+                    <span class="author-name nr-author-name" id="nrAuthorName"><span class="sr-only">Carl Sagan</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+        <footer class="footer">
+          <!-- Back Layer: Celestial Horizon & Parallax Starfield Background (collaborative-clarity-292528.framer.app/preview) -->
+          <div class="footer-fuse-bg" aria-hidden="true">
+            <div class="fuse-base-gradient"></div>
+            <div class="fuse-aurora"></div>
+            <div class="fuse-stars fuse-stars-1"></div>
+            <div class="fuse-stars fuse-stars-2"></div>
+            <div class="fuse-stars fuse-stars-3"></div>
+            <div class="fuse-horizon-arc"></div>
+            <div class="fuse-vignette"></div>
+            <div class="fuse-noise"></div>
+          </div>
+
+          <!-- Existing Background Layer: KokonutUI Shape Hero Interactive Physics Animation -->
+          <!-- Source: https://kokonutui.com/docs/backgrounds/shape-hero -->
+          <div class="footer-shapes-layer" aria-hidden="true">
+            <div class="footer-shape shape-pill shape-outline" data-shape=""><span>Network Infrastructure</span></div>
+            <div class="footer-shape shape-pill shape-solid shape-pill-featured pill-it-support" data-shape="" style="box-shadow: none !important; filter: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important;"><span>IT Support</span></div>
+            <div class="footer-shape shape-pill shape-outline" data-shape=""><span>Cisco Routing</span></div>
+            <div class="footer-shape shape-pill shape-outline" data-shape=""><span>Inter-VLAN Routing</span></div>
+            <div class="footer-shape shape-dot shape-accent dot-1" data-shape=""></div>
+            <div class="footer-shape shape-pill shape-outline shape-pill-featured pill-data-center" data-shape="" style="box-shadow: none !important; filter: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important;"><span>Data Center Ops</span></div>
+            <div class="footer-shape shape-dot shape-solid dot-2" data-shape=""></div>
+            <div class="footer-shape shape-pill shape-outline" data-shape=""><span>Linux & Windows Server</span></div>
+            <div class="footer-shape shape-pill shape-solid" data-shape=""><span>Network Monitoring</span></div>
+            <div class="footer-shape shape-pill shape-accent" data-shape=""><span>System Admin</span></div>
+            <div class="footer-shape shape-pill shape-solid" data-shape=""><span>Cloud & Virtualization</span></div>
+            <div class="footer-shape shape-dot shape-outline dot-3" data-shape=""></div>
+            <div class="footer-shape shape-pill shape-solid" data-shape=""><span>Active Directory</span></div>
+            <div class="footer-shape shape-pill shape-accent shape-pill-featured pill-cybersecurity" data-shape="" style="box-shadow: none !important; filter: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important;"><span>Cybersecurity</span></div>
+            <div class="footer-shape shape-pill shape-solid" data-shape=""><span>Vulnerability Assessment</span></div>
+            <div class="footer-shape shape-pill shape-outline" data-shape=""><span>Troubleshooting</span></div>
+            <div class="footer-shape shape-dot shape-accent dot-4" data-shape=""></div>
+            <div class="footer-shape shape-pill shape-outline" data-shape=""><span>Hardware Diagnostic</span></div>
+            <div class="footer-shape shape-pill shape-accent" data-shape=""><span>Machine Learning</span></div>
+            <div class="footer-shape shape-pill shape-outline" data-shape=""><span>TCP/IP Protocols</span></div>
+            <div class="footer-shape shape-pill shape-solid" data-shape=""><span>Firewall & VPN</span></div>
+            <div class="footer-shape shape-dot shape-solid dot-5" data-shape=""></div>
+          </div>
+          
+          <div class="container">
+            <div class="footer-content">
+                <div class="footer-social">
+                    <h3 class="footer-title">Get In Touch</h3>
+                    <div class="footer-social-links">
+                        <a href="https://facebook.com/imrobinhossain" target="_blank" class="footer-social-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://github.com/imrobinhossain" target="_blank" class="footer-social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.quora.com/profile/%E0%A6%AE%E0%A7%8B%E0%A6%B9%E0%A6%BE%E0%A6%AE%E0%A7%8D%E0%A6%AE%E0%A6%A6-%E0%A6%B0%E0%A6%AC%E0%A6%BF%E0%A6%A8-%E0%A6%B9%E0%A7%8B%E0%A6%B8%E0%A7%87%E0%A6%A8-Robin-Hossain" target="_blank" class="footer-social-link">
+                            <i class="fab fa-quora"></i>
+                        </a>
+                        <a href="https://twitter.com/imrobinhossain" target="_blank" class="footer-social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://wa.me/+8801770792411" target="_blank" class="footer-social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.imdb.com/list/ls568020917/" target="_blank" class="footer-social-link">
+                            <i class="fab fa-imdb"></i>
+                        </a>
+
+                    </div>
+                </div>
+                <p class="copyright">Copyright ©2022-2026 | All rights reserved.</p>
+                <p class="developer-credit">Designed & Developed by <a href="https://bd.linkedin.com/in/imrobinhossain" target="_blank" class="developer-link">Robin Hossain</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile-only: sync Other Skills circular bars to updated mobile percentages
+        if (window.innerWidth <= 1024) {
+            // PLANNING -> 68
+            const pBarPlanning = document.querySelector('.os-bar-mobile.planning');
+            if (pBarPlanning) {
+                pBarPlanning.setAttribute('data-percentage','68'), pBarPlanning.querySelector('.progress-fill') && (pBarPlanning.querySelector('.progress-fill').style.strokeDashoffset = 283 - (68/100)*283);
+                pBarPlanning.querySelector('.progress-fill') && pBarPlanning.querySelector('.progress-fill').setAttribute('aria-valuenow','68');
+            }
+
+            // PROGRAMMING -> 70
+            const pBarProgramming = document.querySelector('.os-bar-mobile.programming');
+            if (pBarProgramming) {
+                pBarProgramming.setAttribute('data-percentage','70'), pBarProgramming.querySelector('.progress-fill') && (pBarProgramming.querySelector('.progress-fill').style.strokeDashoffset = 283 - (70/100)*283);
+                pBarProgramming.querySelector('.progress-fill') && pBarProgramming.querySelector('.progress-fill').setAttribute('aria-valuenow','70');
+            }
+
+            // ORGANIZATION -> 68
+            const pBarOrganization = document.querySelector('.os-bar-mobile.organization');
+            if (pBarOrganization) {
+                pBarOrganization.setAttribute('data-percentage','68'), pBarOrganization.querySelector('.progress-fill') && (pBarOrganization.querySelector('.progress-fill').style.strokeDashoffset = 283 - (68/100)*283);
+                pBarOrganization.querySelector('.progress-fill') && pBarOrganization.querySelector('.progress-fill').setAttribute('aria-valuenow','68');
+            }
+
+            // PROBLEM SOLVING -> 67
+            const pBarProblem = document.querySelector('.os-bar-mobile.problem-solving');
+            if (pBarProblem) {
+                pBarProblem.setAttribute('data-percentage','67'), pBarProblem.querySelector('.progress-fill') && (pBarProblem.querySelector('.progress-fill').style.strokeDashoffset = 283 - (67/100)*283);
+                pBarProblem.querySelector('.progress-fill') && pBarProblem.querySelector('.progress-fill').setAttribute('aria-valuenow','67');
+            }
+
+            // CREATIVE WRITING -> 62
+            const pBarCreative = document.querySelector('.os-bar-mobile.creative-writing');
+            if (pBarCreative) {
+                pBarCreative.setAttribute('data-percentage','62'), pBarCreative.querySelector('.progress-fill') && (pBarCreative.querySelector('.progress-fill').style.strokeDashoffset = 283 - (62/100)*283);
+                pBarCreative.querySelector('.progress-fill') && pBarCreative.querySelector('.progress-fill').setAttribute('aria-valuenow','62');
+            }
+
+            // MARKETING -> 63
+            const pBarMarketing = document.querySelector('.os-bar-mobile.marketing');
+            if (pBarMarketing) {
+                pBarMarketing.setAttribute('data-percentage','63'), pBarMarketing.querySelector('.progress-fill') && (pBarMarketing.querySelector('.progress-fill').style.strokeDashoffset = 283 - (63/100)*283);
+                pBarMarketing.querySelector('.progress-fill') && pBarMarketing.querySelector('.progress-fill').setAttribute('aria-valuenow','63');
+            }
+        }
+        </script>
+        <script src="script.js"></script>
+</body>
+</html>
